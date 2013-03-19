@@ -6,5 +6,6 @@
     <string name="desc_menu_background">background</string>
     <string name="desc_menu_button_omzetten">omzetten</string>
     <string name="desc_menu_button_opvolgorde">op volgorde</string>
+    <string name="desc_omzetten_background">background</string>
 
 </resources>
