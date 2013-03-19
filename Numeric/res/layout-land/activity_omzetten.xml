@@ -14,4 +14,15 @@
         android:contentDescription="@string/desc_omzetten_background"
         android:src="@drawable/omzetspel_bg" />
 
+    <ImageButton
+        android:id="@+id/imageButtonGoBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="30dp"
+        android:background="@drawable/button_go_back"
+        android:contentDescription="@string/desc_button_go_back"
+        android:src="@drawable/button_go_back" />
+
 </RelativeLayout>
