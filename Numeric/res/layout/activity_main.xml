@@ -1,15 +1,39 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent" >
 
-    <ImageView
-        android:id="@+id/imageView1"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:scaleType="fitXY"
-        android:src="@drawable/omzetspel_landscape_bg" />
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/ImageButtonMenuOpVolgorde"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
 
-</RelativeLayout>
+        <ImageView
+            android:id="@+id/imageViewMenuBackground"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:contentDescription="@string/desc_menu_background"
+            android:scaleType="fitXY"
+            android:src="@drawable/menu_bg" />
+
+        <ImageButton
+            android:id="@+id/imageButtonMenuOmzetten"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="17dp"
+            android:background="@drawable/menu_button_omzetten"
+            android:contentDescription="@string/desc_menu_button_omzetten"
+            android:src="@drawable/menu_button_omzetten" />
+
+        <ImageButton
+            android:id="@+id/imageButtonMenuOpVolgorde"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="17dp"
+            android:background="@drawable/menu_button_op_volgorde"
+            android:contentDescription="@string/desc_menu_button_opvolgorde"
+            android:src="@drawable/menu_button_op_volgorde" />
+
+    </RelativeLayout>
