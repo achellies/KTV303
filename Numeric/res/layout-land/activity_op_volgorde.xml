@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    tools:context=".OpVolgordeActivity" >
+
+    <ImageView
+        android:id="@+id/imageViewOpVolgordeBackground"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:contentDescription="@string/desc_op_volgorde_background"
+        android:src="@drawable/op_volgorde_bg" />
+
+    <ImageButton
+        android:id="@+id/imageButtonGoBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="30dp"
+        android:background="@drawable/button_go_back"
+        android:contentDescription="@string/desc_button_go_back"
+        android:src="@drawable/button_go_back" />
+
+</RelativeLayout>
