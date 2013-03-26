@@ -1,6 +1,7 @@
 package com.ktv303.numeric;
 
 import android.app.Activity;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -18,6 +19,10 @@ public class OpVolgordeActivity extends Activity {
         setContentView( R.layout.activity_op_volgorde );
         
         addListenerOnButton();
+        
+        Typeface myTypeface = Typeface.createFromAsset(getAssets(), "fonts/font.ttf");
+        //TextView myTextView = (TextView)findViewById(R.id.myTextView);
+        //myTextView.setTypeface(myTypeface);
     }
 	
 	public void addListenerOnButton()
