@@ -26,4 +26,12 @@
         android:contentDescription="@string/desc_button_go_back"
         android:src="@drawable/button_go_back" />
 
+    <RelativeLayout
+        android:id="@+id/dragLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true" >
+
+    </RelativeLayout>
+
 </RelativeLayout>

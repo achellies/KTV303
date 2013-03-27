@@ -9,5 +9,6 @@
     <string name="desc_omzetten_background">background</string>
     <string name="desc_button_go_back">go back</string>
     <string name="desc_op_volgorde_background">background</string>
+    <string name="txtView_cijfer_X">X</string>
 
 </resources>
