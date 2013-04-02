@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.graphics.Point;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -16,7 +17,7 @@ public class OpVolgordeActivity extends Activity
 	//  imageButtonGoBack
 	private ImageButton imageButtonGoBack;
 	//  numbers
-	private Number[] numbers = new Number[4];
+	private Number[] numbers;
 	//  numberID
 	private int numberID;
 	//  romansTypeFace
@@ -33,6 +34,8 @@ public class OpVolgordeActivity extends Activity
         
         //  reset numberID
         this.numberID = 0;
+        this.numbers = new Number[4];
+        Log.v( "numbers:", this.numbers.toString() );
         
         //  dragLayout
         this.dragLayout = (RelativeLayout) findViewById( R.id.dragLayout );
@@ -43,22 +46,22 @@ public class OpVolgordeActivity extends Activity
         //  number 1
         Point point1 = new Point( 80, 170 );
         this.numbers[0] = new Number( this, this.romansTypeFace, point1 );
-        this.numbers[0].setText( "XII" );
+        this.numbers[0].setText( "I" );
         
         //  number 2
         Point point2 = new Point( 80, 250 );
         this.numbers[1] = new Number( this, this.romansTypeFace, point2 );
-        this.numbers[1].setText( "C" );
+        this.numbers[1].setText( "V" );
         
         //  number 3
         Point point3 = new Point( 160, 170 );
         this.numbers[2] = new Number( this, this.romansTypeFace, point3 );
-        this.numbers[2].setText( "L" );
+        this.numbers[2].setText( "X" );
         
         //  number 4
         Point point4 = new Point( 160, 250 );
         this.numbers[3] = new Number( this, this.romansTypeFace, point4 );
-        this.numbers[3].setText( "X" );
+        this.numbers[3].setText( "L" );
         
         for( Number number : this.numbers )
         {
@@ -99,6 +102,7 @@ public class OpVolgordeActivity extends Activity
         { 
         	case MotionEvent.ACTION_DOWN:
         		// touch down so check if the finger is on a ball
+        		Log.v( "TOUCHDOWN", "TOUCHDOWN" );
         		this.numberID = 0;
             	for( Number number : this.numbers )
             	{
@@ -106,16 +110,18 @@ public class OpVolgordeActivity extends Activity
             		if( X > number.getPaddingLeft() && X < number.getPaddingLeft() + 50 && Y > number.getPaddingTop() && Y < number.getPaddingTop() + 50 )
             		{
                     	this.numberID = number.getID();
+                    	Log.v( "setted numberID:", String.valueOf( this.numberID ) );
                     	break;
                     }
                   }
         		break;
         	case MotionEvent.ACTION_MOVE:
+        		Log.v( "MOVE", "MOVE" );
         		if( this.numberID > 0 )
         		{
                 	this.numbers[ this.numberID - 1 ].setPaddingLeft( X - 25 );
                 	this.numbers[ this.numberID - 1 ].setPaddingTop( Y - 25 );
-                	this.numbers[ this.numberID - 1 ].refresh();
+        			this.numbers[ this.numberID - 1 ].refresh();
                 }
         		break;
         	case MotionEvent.ACTION_UP: 
