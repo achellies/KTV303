@@ -6,12 +6,79 @@
     android:focusable="true"
     tools:context=".OmzettenActivity" >
 
-    <ImageView
-        android:id="@+id/imageViewOmzettenBackground"
+    <RelativeLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:contentDescription="@string/desc_omzetten_background"
-        android:src="@drawable/omzetspel_bg" />
+        android:layout_height="wrap_content" >
+
+        <ImageView
+            android:id="@+id/imageView1fout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/desc_omzetten_1fout"
+            android:src="@drawable/hekje_dicht1" />
+
+        <ImageView
+            android:id="@+id/imageView1goed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:contentDescription="@string/desc_omzetten_1goed"
+            android:src="@drawable/hekje_open1" />
+
+        <ImageView
+            android:id="@+id/imageView2fout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:contentDescription="@string/desc_omzetten_2fout"
+            android:src="@drawable/hekje_dicht2" />
+
+        <ImageView
+            android:id="@+id/imageView3fout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:contentDescription="@string/desc_omzetten_3fout"
+            android:src="@drawable/hekje_dicht3" />
+
+        <ImageView
+            android:id="@+id/imageView2goed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:contentDescription="@string/desc_omzetten_2goed"
+            android:src="@drawable/hekje_open2" />
+
+        <ImageView
+            android:id="@+id/imageView3goed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/desc_omzetten_3goed"
+            android:src="@drawable/hekje_open3" />
+
+        <ImageView
+            android:id="@+id/imageView4fout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/desc_omzetten_4fout"
+            android:src="@drawable/hekje_dicht4" />
+
+        <ImageView
+            android:id="@+id/imageView4goed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:contentDescription="@string/desc_omzetten_4goed"
+            android:src="@drawable/hekje_open4" />
+
+        <ImageView
+            android:id="@+id/imageViewOmzettenBackground"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/desc_omzetten_background"
+            android:src="@drawable/omzetspel_bg" />
+
+    </RelativeLayout>
 
     <ImageButton
         android:id="@+id/imageButtonGoBack"
@@ -25,29 +92,7 @@
         android:src="@drawable/button_go_back" />
 
     <ImageButton
-        android:id="@+id/ImageButtonDoor4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/ImageButtonDoor3"
-        android:layout_marginRight="30dp"
-        android:background="@android:color/transparent"
-        android:minHeight="200dp"
-        android:minWidth="200dp" />
-
-    <ImageButton
-        android:id="@+id/ImageButtonDoor3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/ImageButtonDoor2"
-        android:layout_marginLeft="53dp"
-        android:layout_toRightOf="@+id/ImageButtonDoor2"
-        android:background="@android:color/transparent"
-        android:minHeight="200dp"
-        android:minWidth="200dp" />
-
-    <ImageButton
-        android:id="@+id/ImageButtonDoor2"
+        android:id="@+id/imageButtonDoor2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/imageButtonGoBack"
@@ -55,6 +100,7 @@
         android:layout_marginLeft="69dp"
         android:layout_toRightOf="@+id/imageButtonDoor1"
         android:background="@android:color/transparent"
+        android:contentDescription="@string/desc_button_door_2"
         android:minHeight="200dp"
         android:minWidth="200dp" />
 
@@ -63,8 +109,33 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/imageButtonGoBack"
-        android:layout_alignTop="@+id/ImageButtonDoor2"
+        android:layout_alignTop="@+id/imageButtonDoor2"
         android:background="@android:color/transparent"
+        android:contentDescription="@string/desc_button_door_1"
+        android:minHeight="200dp"
+        android:minWidth="200dp" />
+
+    <ImageButton
+        android:id="@+id/imageButtonDoor3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/imageButtonDoor2"
+        android:layout_marginRight="64dp"
+        android:layout_toLeftOf="@+id/imageButtonDoor4"
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/desc_button_door_3"
+        android:minHeight="200dp"
+        android:minWidth="200dp" />
+
+    <ImageButton
+        android:id="@+id/imageButtonDoor4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/imageButtonDoor3"
+        android:layout_marginRight="34dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/desc_button_door_4"
         android:minHeight="200dp"
         android:minWidth="200dp" />
 

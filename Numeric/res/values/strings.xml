@@ -10,6 +10,17 @@
     <string name="desc_button_go_back">go back</string>
     <string name="desc_op_volgorde_background">background</string>
     <string name="txtView_cijfer_X">X</string>
-    <string name="desc_button_door_1"></string>
+    <string name="desc_button_door_1">open door</string>
+    <string name="desc_button_door_2">open door</string>
+    <string name="desc_button_door_3">open door</string>
+    <string name="desc_button_door_4">open door</string>
+    <string name="desc_omzetten_1goed">1 goed</string>
+    <string name="desc_omzetten_2goed">2 goed</string>
+    <string name="desc_omzetten_3goed">3 goed</string>
+    <string name="desc_omzetten_4goed">4 goed</string>
+    <string name="desc_omzetten_1fout">1 fout</string>
+    <string name="desc_omzetten_2fout">2 fout</string>
+    <string name="desc_omzetten_3fout">3 fout</string>
+    <string name="desc_omzetten_4fout">4 fout</string>
 
 </resources>
