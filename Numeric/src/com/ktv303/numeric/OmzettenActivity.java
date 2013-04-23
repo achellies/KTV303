@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.Button;
 import android.widget.ImageButton;
 
 public class OmzettenActivity extends Activity
@@ -25,6 +26,7 @@ public class OmzettenActivity extends Activity
         //in de code hieronder worden een van de 2 visible gemaakt afhankelijk van het antwoord.
         
         addListenerOnButton();
+
     }
     
     public void addListenerOnButton()
@@ -42,10 +44,10 @@ public class OmzettenActivity extends Activity
 			
 		});
 		
-		
+    
 		//imageButtonDoor1 = (ImageButton) findViewById(R.id.imageButtonDoor1);
 		
-		imageButtonDoor1.setOnClickListener(new OnClickListener()
+	    imageButtonDoor1.setOnClickListener(new OnClickListener()
 		{
 			@Override
 			public void onClick(View arg0)
@@ -88,5 +90,4 @@ public class OmzettenActivity extends Activity
 		});
  
 	}
-    
-}
+    }
