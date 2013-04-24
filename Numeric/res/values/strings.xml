@@ -1,5 +1,4 @@
 <resources>
-
     <string name="app_name">Numeric</string>
     <string name="menu_settings">Settings</string>
     <string name="title_activity_main">Numeric</string>
@@ -22,5 +21,17 @@
     <string name="desc_omzetten_2fout">2 fout</string>
     <string name="desc_omzetten_3fout">3 fout</string>
     <string name="desc_omzetten_4fout">4 fout</string>
+    <string name="desc_vraag_1">vraag 1</string>
+    <string name="desc_vraag_2">vraag 2</string>
+    <string name="desc_vraag_3">vraag 3</string>
+    <string name="desc_vraag_4">vraag 4</string>
+    <string name="desc_vraag_5">vraag 5</string>
+    <string name="desc_vraag_6">vraag 6</string>
+    <string name="desc_vraag_7">vraag 7</string>
+    <string name="desc_vraag_8">vraag 8</string>
+    <string name="desc_vraag_9">vraag 9</string>
+    <string name="desc_vraag_10">vraag 10</string>
+    <string name="desc_button_volgende">volgende</string>
+
 
 </resources>
