@@ -32,10 +32,8 @@ public class OpVolgordeActivity extends Activity
         
         setContentView( R.layout.activity_op_volgorde );
         
-        //  reset numberID
         this.numberID = 0;
         this.numbers = new Number[4];
-        Log.v( "numbers:", this.numbers.toString() );
         
         //  dragLayout
         this.dragLayout = (RelativeLayout) findViewById( R.id.dragLayout );
@@ -45,22 +43,22 @@ public class OpVolgordeActivity extends Activity
         
         //  number 1
         Point point1 = new Point( 80, 170 );
-        this.numbers[0] = new Number( this, this.romansTypeFace, point1 );
+        this.numbers[0] = new Number( 1, this, this.romansTypeFace, point1 );
         this.numbers[0].setText( "I" );
         
         //  number 2
         Point point2 = new Point( 80, 250 );
-        this.numbers[1] = new Number( this, this.romansTypeFace, point2 );
+        this.numbers[1] = new Number( 2, this, this.romansTypeFace, point2 );
         this.numbers[1].setText( "V" );
         
         //  number 3
         Point point3 = new Point( 160, 170 );
-        this.numbers[2] = new Number( this, this.romansTypeFace, point3 );
+        this.numbers[2] = new Number( 3, this, this.romansTypeFace, point3 );
         this.numbers[2].setText( "X" );
         
         //  number 4
         Point point4 = new Point( 160, 250 );
-        this.numbers[3] = new Number( this, this.romansTypeFace, point4 );
+        this.numbers[3] = new Number( 4, this, this.romansTypeFace, point4 );
         this.numbers[3].setText( "L" );
         
         for( Number number : this.numbers )

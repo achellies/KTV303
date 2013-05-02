@@ -11,9 +11,8 @@ public class Number extends TextView {
 	private int paddingLeft;
 	private int paddingTop;
 	private int id;
-	private static int count = 1;
 	
-	public Number( Context content, Typeface font )
+	public Number( int numberId, Context content, Typeface font )
 	{
 		super( content );
 		
@@ -24,21 +23,15 @@ public class Number extends TextView {
 		//  set text color
 		super.setTextColor( getResources().getColor( R.color.Black ) );
 		
-		this.id = count;
-		count++;
+		this.id = numberId;
 	}
 
-	public Number( Context content, Typeface font, Point point )
+	public Number( int numberId, Context content, Typeface font, Point point )
 	{
-		this( content, font );
+		this( numberId, content, font );
 		
 		this.paddingLeft = point.x;
 		this.paddingTop = point.y;
-	}
-	
-	public static int getCount()
-	{
-		return count;
 	}
 	
 	public void setPaddingLeft( int newPaddingLeft )
