@@ -88,123 +88,14 @@
             android:contentDescription="@string/desc_omzetten_background"
             android:src="@drawable/omzetspel_bg" />
 
-        <RelativeLayout
-            android:id="@+id/RelativeLayout3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true" >
-
-            <ImageView
-                android:id="@+id/imageViewVraag1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginRight="400dp"
-                android:layout_marginTop="65dp"
-                android:contentDescription="@string/desc_vraag_1"
-                android:src="@drawable/vraag1" />
-
-            <ImageView
-                android:id="@+id/imageViewVraag3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/imageViewVraag1"
-                android:layout_alignTop="@+id/imageViewVraag1"
-                android:contentDescription="@string/desc_vraag_3"
-                android:src="@drawable/vraag3"
-                android:visibility="invisible" />
-
-            <ImageView
-                android:id="@+id/imageViewVraag4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/imageViewVraag1"
-                android:layout_alignTop="@+id/imageViewVraag1"
-                android:contentDescription="@string/desc_vraag_4"
-                android:src="@drawable/vraag4"
-                android:visibility="invisible" />
-
-            <ImageView
-                android:id="@+id/imageViewVraag5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/imageViewVraag1"
-                android:layout_alignTop="@+id/imageViewVraag1"
-                android:contentDescription="@string/desc_vraag_5"
-                android:src="@drawable/vraag5"
-                android:visibility="invisible" />
-
-            <ImageView
-                android:id="@+id/imageViewVraag6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/imageViewVraag1"
-                android:layout_alignTop="@+id/imageViewVraag1"
-                android:contentDescription="@string/desc_vraag_6"
-                android:src="@drawable/vraag6"
-                android:visibility="invisible" />
-
-            <ImageView
-                android:id="@+id/imageViewVraag7"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/imageViewVraag1"
-                android:layout_alignTop="@+id/imageViewVraag1"
-                android:contentDescription="@string/desc_vraag_7"
-                android:src="@drawable/vraag7"
-                android:visibility="invisible" />
-
-            <ImageView
-                android:id="@+id/imageViewVraag8"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/imageViewVraag1"
-                android:layout_alignTop="@+id/imageViewVraag1"
-                android:contentDescription="@string/desc_vraag_8"
-                android:src="@drawable/vraag8"
-                android:visibility="invisible" />
-
-            <ImageView
-                android:id="@+id/imageViewVraag9"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/imageViewVraag1"
-                android:layout_alignTop="@+id/imageViewVraag1"
-                android:contentDescription="@string/desc_vraag_9"
-                android:src="@drawable/vraag9"
-                android:visibility="invisible" />
-
-            <ImageView
-                android:id="@+id/imageViewVraag10"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/imageViewVraag1"
-                android:layout_alignTop="@+id/imageViewVraag1"
-                android:contentDescription="@string/desc_vraag_10"
-                android:src="@drawable/vraag10"
-                android:visibility="invisible" />
-
-            <ImageView
-                android:id="@+id/imageViewVraag2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/imageViewVraag1"
-                android:layout_alignTop="@+id/imageViewVraag1"
-                android:contentDescription="@string/desc_vraag_2"
-                android:src="@drawable/vraag2"
-                android:visibility="invisible" />
-
-        </RelativeLayout>
-
         <ImageButton
-            android:id="@+id/imageButtonVolgende"
+            android:id="@+id/imageButtonStart"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/RelativeLayout3"
             android:layout_alignParentBottom="true"
-            android:contentDescription="@string/desc_button_volgende"
-            android:src="@drawable/volgende" />
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="77dp"
+            android:src="@drawable/start" />
 
     </RelativeLayout>
      

@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.graphics.Point;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -23,18 +24,8 @@ public class OmzettenActivity extends Activity
 	private ImageView imageView2fout;
 	private ImageView imageView3fout;
 	private ImageView imageView4fout;
-	private ImageView imageViewVraag1;
-	private ImageView imageViewVraag2;
-	private ImageView imageViewVraag3;
-	private ImageView imageViewVraag4;
-	private ImageView imageViewVraag5;
-	private ImageView imageViewVraag6;
-	private ImageView imageViewVraag7;
-	private ImageView imageViewVraag8;
-	private ImageView imageViewVraag9;
-	private ImageView imageViewVraag10;
-
-	private ImageButton imageButtonVolgende;
+	
+	private ImageButton imageButtonStart;
 	private ImageButton imageButtonGoBack;
 	private ImageButton imageButtonDoor1;
 	private ImageButton imageButtonDoor2;
@@ -51,10 +42,7 @@ public class OmzettenActivity extends Activity
         setContentView( R.layout.activity_omzetten );
         
       
-        
-        //Hier moeten de goeie en de foute antwoorden allebij op visible(0) gezet worden.
-        //in de code hieronder worden een van de 2 visible gemaakt afhankelijk van het antwoord.
-        
+      
         addListenerOnButton();
 
     }
@@ -83,6 +71,7 @@ public class OmzettenActivity extends Activity
 			public void onClick(View arg0)
 			{
 				if(arg0 == imageButtonDoor1){
+					/**if(QuestionValue==true){
 					imageViewOmzettenBackground = (ImageView) findViewById(R.id.imageViewOmzettenBackground);
 					imageViewOmzettenBackground.setVisibility(ImageView.GONE);
 					imageView4fout = (ImageView) findViewById(R.id.imageView4fout);
@@ -92,7 +81,7 @@ public class OmzettenActivity extends Activity
 					imageView2fout = (ImageView) findViewById(R.id.imageView2fout);
 					imageView2fout.setVisibility(ImageView.GONE);
 					imageView1fout = (ImageView) findViewById(R.id.imageView1fout);
-					imageView1fout.setVisibility(ImageView.VISIBLE);
+					imageView1fout.setVisibility(ImageView.GONE);
 					imageView4goed = (ImageView) findViewById(R.id.imageView4goed);
 					imageView4goed.setVisibility(ImageView.GONE);
 					imageView3goed = (ImageView) findViewById(R.id.imageView3goed);
@@ -100,7 +89,28 @@ public class OmzettenActivity extends Activity
 					imageView2goed = (ImageView) findViewById(R.id.imageView2goed);
 					imageView2goed.setVisibility(ImageView.GONE);
 					imageView1goed = (ImageView) findViewById(R.id.imageView1goed);
-					imageView1goed.setVisibility(ImageView.GONE);
+					imageView1goed.setVisibility(ImageView.VISIBLE);
+					}
+					else{
+						imageViewOmzettenBackground = (ImageView) findViewById(R.id.imageViewOmzettenBackground);
+						imageViewOmzettenBackground.setVisibility(ImageView.GONE);
+						imageView4fout = (ImageView) findViewById(R.id.imageView4fout);
+						imageView4fout.setVisibility(ImageView.GONE);
+						imageView3fout = (ImageView) findViewById(R.id.imageView3fout);
+						imageView3fout.setVisibility(ImageView.GONE);
+						imageView2fout = (ImageView) findViewById(R.id.imageView2fout);
+						imageView2fout.setVisibility(ImageView.GONE);
+						imageView1fout = (ImageView) findViewById(R.id.imageView1fout);
+						imageView1fout.setVisibility(ImageView.VISIBLE);
+						imageView4goed = (ImageView) findViewById(R.id.imageView4goed);
+						imageView4goed.setVisibility(ImageView.GONE);
+						imageView3goed = (ImageView) findViewById(R.id.imageView3goed);
+						imageView3goed.setVisibility(ImageView.GONE);
+						imageView2goed = (ImageView) findViewById(R.id.imageView2goed);
+						imageView2goed.setVisibility(ImageView.GONE);
+						imageView1goed = (ImageView) findViewById(R.id.imageView1goed);
+						imageView1goed.setVisibility(ImageView.GONE);
+						}**/
 				}
 				
 				//Hierin switchen we tussen het dichte deurtje en het open deurtje
@@ -115,6 +125,7 @@ public class OmzettenActivity extends Activity
 			public void onClick(View arg0)
 			{
 				if(arg0 == imageButtonDoor2){
+					/**if(QuestionValue==true){
 					imageViewOmzettenBackground = (ImageView) findViewById(R.id.imageViewOmzettenBackground);
 					imageViewOmzettenBackground.setVisibility(ImageView.GONE);
 					imageView4fout = (ImageView) findViewById(R.id.imageView4fout);
@@ -133,6 +144,27 @@ public class OmzettenActivity extends Activity
 					imageView2goed.setVisibility(ImageView.VISIBLE);
 					imageView1goed = (ImageView) findViewById(R.id.imageView1goed);
 					imageView1goed.setVisibility(ImageView.GONE);
+					}
+					else{
+						imageViewOmzettenBackground = (ImageView) findViewById(R.id.imageViewOmzettenBackground);
+						imageViewOmzettenBackground.setVisibility(ImageView.GONE);
+						imageView4fout = (ImageView) findViewById(R.id.imageView4fout);
+						imageView4fout.setVisibility(ImageView.GONE);
+						imageView3fout = (ImageView) findViewById(R.id.imageView3fout);
+						imageView3fout.setVisibility(ImageView.GONE);
+						imageView2fout = (ImageView) findViewById(R.id.imageView2fout);
+						imageView2fout.setVisibility(ImageView.VISIBLE);
+						imageView1fout = (ImageView) findViewById(R.id.imageView1fout);
+						imageView1fout.setVisibility(ImageView.GONE);
+						imageView4goed = (ImageView) findViewById(R.id.imageView4goed);
+						imageView4goed.setVisibility(ImageView.GONE);
+						imageView3goed = (ImageView) findViewById(R.id.imageView3goed);
+						imageView3goed.setVisibility(ImageView.GONE);
+						imageView2goed = (ImageView) findViewById(R.id.imageView2goed);
+						imageView2goed.setVisibility(ImageView.GONE);
+						imageView1goed = (ImageView) findViewById(R.id.imageView1goed);
+						imageView1goed.setVisibility(ImageView.GONE);
+						}**/
 				}
 				
 				//Hierin switchen we tussen het dichte deurtje en het open deurtje
@@ -146,12 +178,13 @@ public class OmzettenActivity extends Activity
 			@Override
 			public void onClick(View arg0)
 			{
+				/**if(QuestionValue==true){
 				imageViewOmzettenBackground = (ImageView) findViewById(R.id.imageViewOmzettenBackground);
 				imageViewOmzettenBackground.setVisibility(ImageView.GONE);
 				imageView4fout = (ImageView) findViewById(R.id.imageView4fout);
 				imageView4fout.setVisibility(ImageView.GONE);
 				imageView3fout = (ImageView) findViewById(R.id.imageView3fout);
-				imageView3fout.setVisibility(ImageView.VISIBLE);
+				imageView3fout.setVisibility(ImageView.GONE);
 				imageView2fout = (ImageView) findViewById(R.id.imageView2fout);
 				imageView2fout.setVisibility(ImageView.GONE);
 				imageView1fout = (ImageView) findViewById(R.id.imageView1fout);
@@ -159,11 +192,32 @@ public class OmzettenActivity extends Activity
 				imageView4goed = (ImageView) findViewById(R.id.imageView4goed);
 				imageView4goed.setVisibility(ImageView.GONE);
 				imageView3goed = (ImageView) findViewById(R.id.imageView3goed);
-				imageView3goed.setVisibility(ImageView.GONE);
+				imageView3goed.setVisibility(ImageView.VISIBLE);
 				imageView2goed = (ImageView) findViewById(R.id.imageView2goed);
 				imageView2goed.setVisibility(ImageView.GONE);
 				imageView1goed = (ImageView) findViewById(R.id.imageView1goed);
 				imageView1goed.setVisibility(ImageView.GONE);
+				}
+				else{
+					imageViewOmzettenBackground = (ImageView) findViewById(R.id.imageViewOmzettenBackground);
+					imageViewOmzettenBackground.setVisibility(ImageView.GONE);
+					imageView4fout = (ImageView) findViewById(R.id.imageView4fout);
+					imageView4fout.setVisibility(ImageView.GONE);
+					imageView3fout = (ImageView) findViewById(R.id.imageView3fout);
+					imageView3fout.setVisibility(ImageView.VISIBLE);
+					imageView2fout = (ImageView) findViewById(R.id.imageView2fout);
+					imageView2fout.setVisibility(ImageView.GONE);
+					imageView1fout = (ImageView) findViewById(R.id.imageView1fout);
+					imageView1fout.setVisibility(ImageView.GONE);
+					imageView4goed = (ImageView) findViewById(R.id.imageView4goed);
+					imageView4goed.setVisibility(ImageView.GONE);
+					imageView3goed = (ImageView) findViewById(R.id.imageView3goed);
+					imageView3goed.setVisibility(ImageView.GONE);
+					imageView2goed = (ImageView) findViewById(R.id.imageView2goed);
+					imageView2goed.setVisibility(ImageView.GONE);
+					imageView1goed = (ImageView) findViewById(R.id.imageView1goed);
+					imageView1goed.setVisibility(ImageView.GONE);
+					}**/
 				//Hierin switchen we tussen het dichte deurtje en het open deurtje
 			}
 		});
@@ -175,10 +229,11 @@ public class OmzettenActivity extends Activity
 			@Override
 			public void onClick(View arg0)
 			{
+				/**if(QuestionValue==true){
 				imageViewOmzettenBackground = (ImageView) findViewById(R.id.imageViewOmzettenBackground);
 				imageViewOmzettenBackground.setVisibility(ImageView.GONE);
 				imageView4fout = (ImageView) findViewById(R.id.imageView4fout);
-				imageView4fout.setVisibility(ImageView.VISIBLE);
+				imageView4fout.setVisibility(ImageView.GONE);
 				imageView3fout = (ImageView) findViewById(R.id.imageView3fout);
 				imageView3fout.setVisibility(ImageView.GONE);
 				imageView2fout = (ImageView) findViewById(R.id.imageView2fout);
@@ -186,33 +241,59 @@ public class OmzettenActivity extends Activity
 				imageView1fout = (ImageView) findViewById(R.id.imageView1fout);
 				imageView1fout.setVisibility(ImageView.GONE);
 				imageView4goed = (ImageView) findViewById(R.id.imageView4goed);
-				imageView4goed.setVisibility(ImageView.GONE);
+				imageView4goed.setVisibility(ImageView.VISIBLE);
 				imageView3goed = (ImageView) findViewById(R.id.imageView3goed);
 				imageView3goed.setVisibility(ImageView.GONE);
 				imageView2goed = (ImageView) findViewById(R.id.imageView2goed);
 				imageView2goed.setVisibility(ImageView.GONE);
 				imageView1goed = (ImageView) findViewById(R.id.imageView1goed);
 				imageView1goed.setVisibility(ImageView.GONE);
+				}
+				else{
+					imageViewOmzettenBackground = (ImageView) findViewById(R.id.imageViewOmzettenBackground);
+					imageViewOmzettenBackground.setVisibility(ImageView.GONE);
+					imageView4fout = (ImageView) findViewById(R.id.imageView4fout);
+					imageView4fout.setVisibility(ImageView.VISIBLE);
+					imageView3fout = (ImageView) findViewById(R.id.imageView3fout);
+					imageView3fout.setVisibility(ImageView.GONE);
+					imageView2fout = (ImageView) findViewById(R.id.imageView2fout);
+					imageView2fout.setVisibility(ImageView.GONE);
+					imageView1fout = (ImageView) findViewById(R.id.imageView1fout);
+					imageView1fout.setVisibility(ImageView.GONE);
+					imageView4goed = (ImageView) findViewById(R.id.imageView4goed);
+					imageView4goed.setVisibility(ImageView.GONE);
+					imageView3goed = (ImageView) findViewById(R.id.imageView3goed);
+					imageView3goed.setVisibility(ImageView.GONE);
+					imageView2goed = (ImageView) findViewById(R.id.imageView2goed);
+					imageView2goed.setVisibility(ImageView.GONE);
+					imageView1goed = (ImageView) findViewById(R.id.imageView1goed);
+					imageView1goed.setVisibility(ImageView.GONE);
+					}**/
 				//Hierin switchen we tussen het dichte deurtje en het open deurtje
 			}
 		});
       
 		
 		
-	   /** imageButtonVolgende = (ImageButton) findViewById(R.id.imageButtonVolgende);
+	    imageButtonStart = (ImageButton) findViewById(R.id.imageButtonStart);
 		
-		imageButtonVolgende.setOnClickListener(new OnClickListener()
+		imageButtonStart.setOnClickListener(new OnClickListener()
 		{
 			@Override
 			public void onClick(View arg0)
 			{
-				
-				imageViewVraag1 = (ImageView) findViewById(R.id.imageViewVraag1);
-				imageViewVraag1.setVisibility(ImageView.GONE);
-				imageViewVraag2 = (ImageView) findViewById(R.id.imageViewVraag2);
-				imageViewVraag2.setVisibility(ImageView.VISIBLE);
+				imageView1goed = (ImageView) findViewById(R.id.imageView1goed);
+				imageView1goed.setVisibility(ImageView.VISIBLE);  
+				imageViewOmzettenBackground = (ImageView) findViewById(R.id.imageViewOmzettenBackground);
+				imageViewOmzettenBackground.setVisibility(ImageView.GONE);    			
+				Handler handler = new Handler(); 
+    			handler.postDelayed(new Runnable() { 
+         		public void run() { 
+         		imageViewOmzettenBackground = (ImageView) findViewById(R.id.imageViewOmzettenBackground);
+    			imageViewOmzettenBackground.setVisibility(ImageView.VISIBLE);            } 
+    			}, 4000);
 			}
-		});**/
+		});
 	}
     
     }
