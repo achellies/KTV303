@@ -1,5 +1,9 @@
 package com.ktv303.numeric;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
 import android.app.Activity;
 import android.graphics.Point;
 import android.graphics.Typeface;
@@ -8,7 +12,6 @@ import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.ViewGroup.LayoutParams;
 import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 import model.Number;
@@ -42,28 +45,32 @@ public class OpVolgordeActivity extends Activity
         //  set font
         this.romansTypeFace = Typeface.createFromAsset( getAssets(), "fonts/font.ttf" );
         
+        List<Point> startPoints = new ArrayList<Point>();
+        startPoints.add( new Point( 80, 170 ) );
+        startPoints.add( new Point( 160, 170 ) );
+        startPoints.add( new Point( 80, 250 ) );
+        startPoints.add( new Point( 160, 250 ) );
+        
+        shuffleList( startPoints );        
+        
         //  number 1
-        Point number1StartPoint = new Point( 80, 170 );
         Point number1GoodPoint = new Point( 352, 279 );
-        this.numbers[0] = new Number( 1, this, this.romansTypeFace, number1StartPoint, number1GoodPoint );
+        this.numbers[0] = new Number( 1, this, this.romansTypeFace, startPoints.get(0), number1GoodPoint );
         this.numbers[0].setText( "I" );
         
         //  number 2
-        Point number2StartPoint = new Point( 160, 170 );
         Point number2GoodPoint = new Point( 462, 228 );
-        this.numbers[1] = new Number( 2, this, this.romansTypeFace, number2StartPoint, number2GoodPoint );
+        this.numbers[1] = new Number( 2, this, this.romansTypeFace, startPoints.get(1), number2GoodPoint );
         this.numbers[1].setText( "V" );
         
         //  number 3
-        Point number3StartPoint = new Point( 80, 250 );
         Point number3GoodPoint = new Point( 574, 179 );
-        this.numbers[2] = new Number( 3, this, this.romansTypeFace, number3StartPoint, number3GoodPoint );
+        this.numbers[2] = new Number( 3, this, this.romansTypeFace, startPoints.get(2), number3GoodPoint );
         this.numbers[2].setText( "X" );
         
         //  number 4
-        Point number4StartPoint = new Point( 160, 250 );
         Point number4GoodPoint = new Point( 690, 125 );
-        this.numbers[3] = new Number( 4, this, this.romansTypeFace, number4StartPoint, number4GoodPoint );
+        this.numbers[3] = new Number( 4, this, this.romansTypeFace, startPoints.get(3), number4GoodPoint );
         this.numbers[3].setText( "L" );
         
         for( Number number : this.numbers )
@@ -145,5 +152,24 @@ public class OpVolgordeActivity extends Activity
         this.dragLayout.requestLayout();
         return true; 
     }
+    
+    public static void shuffleList(List<Point> a)
+	{
+	    int n = a.size();
+	    Random random = new Random();
+	    random.nextInt();
+	    for (int i = 0; i < n; i++)
+	    {
+	    	int change = i + random.nextInt(n - i);
+	    	swap(a, i, change);
+	    }
+	}
+
+	private static void swap(List<Point> a, int i, int change)
+	{
+		Point helper = a.get(i);
+	    a.set(i, a.get(change));
+	    a.set(change, helper);
+	}
 	
 }
