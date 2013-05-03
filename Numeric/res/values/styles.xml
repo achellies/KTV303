@@ -2,5 +2,9 @@
 
     <style name="AppTheme" parent="android:Theme.Light" />
     <color name="Black">#000000</color>
+    <color name="White">#FFFFFF</color>
+    <color name="Grey">#CCCCCC</color>
+    <color name="Green">#008000</color>
+    <color name="Red">#FF0000</color>
 
 </resources>
