@@ -34,8 +34,10 @@ public class OpVolgordeActivity extends Activity
     {
         super.onCreate(savedInstanceState);
         
+        //  set op volgorde screen content
         setContentView( R.layout.activity_op_volgorde );
         
+        //  set numberid and numbers array
         this.numberID = 0;
         this.numbers = new Number[4];
         
@@ -45,6 +47,7 @@ public class OpVolgordeActivity extends Activity
         //  set font
         this.romansTypeFace = Typeface.createFromAsset( getAssets(), "fonts/font.ttf" );
         
+        //  create four new startpoints for numbers
         List<Point> startPoints = new ArrayList<Point>();
         startPoints.add( new Point( 80, 170 ) );
         startPoints.add( new Point( 160, 170 ) );
