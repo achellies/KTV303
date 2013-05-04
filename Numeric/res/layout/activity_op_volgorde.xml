@@ -31,6 +31,17 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentTop="true" >
+
     </RelativeLayout>
+
+    <ImageButton
+        android:id="@+id/imageButtonNext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/op_volgorde_goed"
+        android:background="@drawable/op_volgorde_goed"
+        android:layout_marginLeft="6dp"
+        android:contentDescription="@string/desc_op_volgorde_goed"
+        android:visibility="invisible" />
 
 </RelativeLayout>

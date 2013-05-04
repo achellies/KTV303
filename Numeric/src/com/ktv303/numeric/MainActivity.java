@@ -1,5 +1,7 @@
 package com.ktv303.numeric;
 
+import java.util.ArrayList;
+
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -46,6 +48,9 @@ public class MainActivity extends Activity
 			public void onClick( View arg0 )
 			{
 				Intent opVolgordeScreen = new Intent( getApplicationContext(), OpVolgordeActivity.class );
+				opVolgordeScreen.putExtra( "highscore", 0 );
+				opVolgordeScreen.putExtra( "gameCount", 0 );
+				opVolgordeScreen.putIntegerArrayListExtra( "combiAlreadyAnswered", new ArrayList<Integer>()  );
 				startActivity( opVolgordeScreen );
 			}
 		});

@@ -25,15 +25,15 @@ public class Number extends TextView {
 		//  set font
 		super.setTypeface( font );
 		//  set text size
-		super.setTextSize( 50 );
+		super.setTextSize( 40 );
 		//  set text color
-		super.setTextColor( getResources().getColor( R.color.White ) );
+		super.setTextColor( getResources().getColor( R.color.Black ) );
 		//  set background color
 		super.setBackgroundColor( getResources().getColor( R.color.Grey ) );
 		//  set height of number
-		super.setHeight( 50 );
+		super.setHeight( 100 );
 		//  set width of number
-		super.setWidth( 50 );
+		super.setWidth( 100 );
 		//  set horizontal and vertical alignment
 		super.setGravity( Gravity.CENTER_VERTICAL | Gravity.CENTER_HORIZONTAL );
 		//  set padding top
@@ -79,7 +79,7 @@ public class Number extends TextView {
 	private void good()
 	{
 		this.setBackgroundColor( getResources().getColor( R.color.Green ) );
-		this.moveNumber( this.goodX - 25, this.goodY - 25 );
+		this.moveNumber( this.goodX - 50, this.goodY- 50 );
 		this.setFocusable( false );
 	}
 	
@@ -91,7 +91,7 @@ public class Number extends TextView {
 	
 	public void checkAnswer( int X, int Y )
 	{
-		if( ( ( this.goodX - 15 ) < X && X < ( this.goodX + 15 ) ) && ( ( this.goodY - 15 ) < Y && Y < ( this.goodY + 15 ) ) )
+		if( ( ( this.goodX - 30 ) < X && X < ( this.goodX + 30 ) ) && ( ( this.goodY - 30 ) < Y && Y < ( this.goodY + 30 ) ) )
 		{
 			//  correct answer was given
 			this.good();
