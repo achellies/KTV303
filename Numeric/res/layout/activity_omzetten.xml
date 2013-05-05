@@ -88,15 +88,6 @@
             android:contentDescription="@string/desc_omzetten_background"
             android:src="@drawable/omzetspel_bg" />
 
-        <ImageButton
-            android:id="@+id/imageButtonStart"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="77dp"
-            android:src="@drawable/start" />
-
     </RelativeLayout>
      
     <ImageButton

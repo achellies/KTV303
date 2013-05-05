@@ -25,7 +25,6 @@ public class OmzettenActivity extends Activity
 	private ImageView imageView3fout;
 	private ImageView imageView4fout;
 	
-	private ImageButton imageButtonStart;
 	private ImageButton imageButtonGoBack;
 	private ImageButton imageButtonDoor1;
 	private ImageButton imageButtonDoor2;
@@ -71,7 +70,7 @@ public class OmzettenActivity extends Activity
 			public void onClick(View arg0)
 			{
 				if(arg0 == imageButtonDoor1){
-					/**if(QuestionValue==true){
+					//if(QuestionValue==true){
 					imageViewOmzettenBackground = (ImageView) findViewById(R.id.imageViewOmzettenBackground);
 					imageViewOmzettenBackground.setVisibility(ImageView.GONE);
 					imageView4fout = (ImageView) findViewById(R.id.imageView4fout);
@@ -90,7 +89,7 @@ public class OmzettenActivity extends Activity
 					imageView2goed.setVisibility(ImageView.GONE);
 					imageView1goed = (ImageView) findViewById(R.id.imageView1goed);
 					imageView1goed.setVisibility(ImageView.VISIBLE);
-					}
+					/**}
 					else{
 						imageViewOmzettenBackground = (ImageView) findViewById(R.id.imageViewOmzettenBackground);
 						imageViewOmzettenBackground.setVisibility(ImageView.GONE);
@@ -125,7 +124,7 @@ public class OmzettenActivity extends Activity
 			public void onClick(View arg0)
 			{
 				if(arg0 == imageButtonDoor2){
-					/**if(QuestionValue==true){
+					//if(QuestionValue==true){
 					imageViewOmzettenBackground = (ImageView) findViewById(R.id.imageViewOmzettenBackground);
 					imageViewOmzettenBackground.setVisibility(ImageView.GONE);
 					imageView4fout = (ImageView) findViewById(R.id.imageView4fout);
@@ -144,7 +143,7 @@ public class OmzettenActivity extends Activity
 					imageView2goed.setVisibility(ImageView.VISIBLE);
 					imageView1goed = (ImageView) findViewById(R.id.imageView1goed);
 					imageView1goed.setVisibility(ImageView.GONE);
-					}
+					/**}
 					else{
 						imageViewOmzettenBackground = (ImageView) findViewById(R.id.imageViewOmzettenBackground);
 						imageViewOmzettenBackground.setVisibility(ImageView.GONE);
@@ -178,7 +177,7 @@ public class OmzettenActivity extends Activity
 			@Override
 			public void onClick(View arg0)
 			{
-				/**if(QuestionValue==true){
+				//if(QuestionValue==true){
 				imageViewOmzettenBackground = (ImageView) findViewById(R.id.imageViewOmzettenBackground);
 				imageViewOmzettenBackground.setVisibility(ImageView.GONE);
 				imageView4fout = (ImageView) findViewById(R.id.imageView4fout);
@@ -197,7 +196,7 @@ public class OmzettenActivity extends Activity
 				imageView2goed.setVisibility(ImageView.GONE);
 				imageView1goed = (ImageView) findViewById(R.id.imageView1goed);
 				imageView1goed.setVisibility(ImageView.GONE);
-				}
+				/**}
 				else{
 					imageViewOmzettenBackground = (ImageView) findViewById(R.id.imageViewOmzettenBackground);
 					imageViewOmzettenBackground.setVisibility(ImageView.GONE);
@@ -229,7 +228,7 @@ public class OmzettenActivity extends Activity
 			@Override
 			public void onClick(View arg0)
 			{
-				/**if(QuestionValue==true){
+				//if(QuestionValue==true){
 				imageViewOmzettenBackground = (ImageView) findViewById(R.id.imageViewOmzettenBackground);
 				imageViewOmzettenBackground.setVisibility(ImageView.GONE);
 				imageView4fout = (ImageView) findViewById(R.id.imageView4fout);
@@ -248,7 +247,7 @@ public class OmzettenActivity extends Activity
 				imageView2goed.setVisibility(ImageView.GONE);
 				imageView1goed = (ImageView) findViewById(R.id.imageView1goed);
 				imageView1goed.setVisibility(ImageView.GONE);
-				}
+				/**}
 				else{
 					imageViewOmzettenBackground = (ImageView) findViewById(R.id.imageViewOmzettenBackground);
 					imageViewOmzettenBackground.setVisibility(ImageView.GONE);
@@ -273,27 +272,7 @@ public class OmzettenActivity extends Activity
 			}
 		});
       
-		
-		
-	    imageButtonStart = (ImageButton) findViewById(R.id.imageButtonStart);
-		
-		imageButtonStart.setOnClickListener(new OnClickListener()
-		{
-			@Override
-			public void onClick(View arg0)
-			{
-				imageView1goed = (ImageView) findViewById(R.id.imageView1goed);
-				imageView1goed.setVisibility(ImageView.VISIBLE);  
-				imageViewOmzettenBackground = (ImageView) findViewById(R.id.imageViewOmzettenBackground);
-				imageViewOmzettenBackground.setVisibility(ImageView.GONE);    			
-				Handler handler = new Handler(); 
-    			handler.postDelayed(new Runnable() { 
-         		public void run() { 
-         		imageViewOmzettenBackground = (ImageView) findViewById(R.id.imageViewOmzettenBackground);
-    			imageViewOmzettenBackground.setVisibility(ImageView.VISIBLE);            } 
-    			}, 4000);
-			}
-		});
+	
 	}
     
     }
