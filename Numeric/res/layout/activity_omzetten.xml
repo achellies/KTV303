@@ -149,5 +149,15 @@
         android:minHeight="200dp"
         android:minWidth="200dp" />
 
+    <ImageButton
+        android:id="@+id/imageButtonNext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/op_volgorde_goed"
+        android:contentDescription="@string/desc_op_volgorde_goed"
+        android:src="@drawable/op_volgorde_goed"
+        android:visibility="invisible" />
 
 </RelativeLayout>
