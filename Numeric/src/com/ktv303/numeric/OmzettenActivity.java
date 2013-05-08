@@ -66,7 +66,7 @@ public class OmzettenActivity extends Activity
 	private ImageButton imageButtonDoor3;
 	private ImageButton imageButtonDoor4;
 	
-
+	
 	
     @Override
     public void onCreate(Bundle savedInstanceState)
