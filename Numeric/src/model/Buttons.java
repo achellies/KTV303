@@ -6,6 +6,7 @@ import android.content.Context;
 import android.graphics.Color;
 import android.graphics.Point;
 import android.graphics.Typeface;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -18,7 +19,7 @@ import android.widget.TextView;
 
 
 
-public class Buttons extends TextView {
+public class Buttons extends TextView implements OnClickListener{
 	private ImageView imageViewOmzettenBackground;
 	private ImageView imageView1goed;
 	private ImageView imageView2goed;
@@ -33,8 +34,8 @@ public class Buttons extends TextView {
 	private int startY;
 	private boolean answer;
 	private int id;
+	private RelativeLayout ButtonLayout;
 
-	
 	
 	
 		public Buttons( int buttonId, Context content, Typeface font ){
@@ -62,8 +63,6 @@ public class Buttons extends TextView {
 			super.setClickable(true);
 			
 			this.id = buttonId;
-			
-	        OnClick();
 
 
 		}
@@ -83,22 +82,6 @@ public class Buttons extends TextView {
 		public RelativeLayout.LayoutParams getRLP()
 		{
 			return this.RLP;
-		}
-		
-		private void OnClick(){
-			final TextView Buttons = (TextView) findViewById(R.id.ButtonLayout);
-
-			Buttons.setOnClickListener(new OnClickListener(){
-				public void onClick(View arg0) {
-					if(Buttons.getText().toString().equals("X") || Buttons.getText().toString().equals("XC") || Buttons.getText().toString().equals("XIV") || Buttons.getText().toString().equals("I") || Buttons.getText().toString().equals("C")) {
-						
-						answer = true;
-						
-					}
-						
-				}
-				
-			});
 		}
 			
 		
@@ -188,7 +171,7 @@ public class Buttons extends TextView {
 			
 		}
 		
-		private void wrong(int id)
+		public void wrong(int id)
 		// Kijkt welke knop ingedrukt is (weet niet of dit werkt) en stelt het bijbehorende hekje op rood
 		{
 			if(id==1){
@@ -274,18 +257,31 @@ public class Buttons extends TextView {
 			
 		}
 		
+		@Override
+		public void onClick(View arg0) {
+			TextView TextViewClick = (TextView) findViewById ( id );
+			if(TextViewClick.getText().toString().equals("X") || TextViewClick.getText().toString().equals("XC") || TextViewClick.getText().toString().equals("XIV") || TextViewClick.getText().toString().equals("I") || TextViewClick.getText().toString().equals("C")) {
+				answer = true;
+			}
+			else{
+				answer = false;
+			}
+		}
+		
 		public void checkAnswer()
 		{
 			// Kijkt of het aangedrukte knopje een goed of fout antwoord is, dit klopt nog niet, kan jij ff uitzoeken?
 			if( answer = true)
 			{
 				//  correct answer was given
-				this.good(id);
+				good(id);
 			} else {
-				//  wrong answer was given, reset position
-				this.wrong(id);
+				//  wrong answer was given
+				wrong(id);
 			}
 		}
+
+	
 		
 }
 
