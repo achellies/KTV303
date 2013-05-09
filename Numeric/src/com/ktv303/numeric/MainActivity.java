@@ -35,6 +35,9 @@ public class MainActivity extends Activity
 			public void onClick( View arg0 )
 			{
 				Intent omzettenScreen = new Intent( getApplicationContext(), OmzettenActivity.class );
+				omzettenScreen.putExtra( "highscore", 0 );
+				omzettenScreen.putExtra( "gameCount", 0 );
+				omzettenScreen.putIntegerArrayListExtra( "combiAlreadyAnswered", new ArrayList<Integer>()  );
 				startActivity( omzettenScreen );
 			}
 			
