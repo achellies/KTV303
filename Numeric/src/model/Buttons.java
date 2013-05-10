@@ -69,6 +69,7 @@ public class Buttons extends TextView{
 			super.setClickable(true);
 					
 			this.id = buttonId;
+			addListenerOnButton();
 
 
 		}
@@ -103,7 +104,7 @@ public class Buttons extends TextView{
 			TextView textviewclick = (TextView) findViewById( id );
 		
 			
-			if(textviewclick.getText().toString().equals("X") || textviewclick.getText().toString().equals("XC") || textviewclick.getText().toString().equals("XIV") || textviewclick.getText().toString().equals("I") || textviewclick.getText().toString().equals("C")) {
+			if(textviewclick.getText().toString().equals("X") || textviewclick.getText().toString().equals("XC") || textviewclick.getText().toString().equals("XIV") || textviewclick.getText().toString().equals("II") || textviewclick.getText().toString().equals("C")) {
 						if(id==1){
 						imageViewOmzettenBackground = (ImageView) findViewById(R.id.imageViewOmzettenBackground);
 						imageViewOmzettenBackground.setVisibility(ImageView.GONE);
@@ -123,6 +124,7 @@ public class Buttons extends TextView{
 						imageView2goed.setVisibility(ImageView.GONE);
 						imageView1goed = (ImageView) findViewById(R.id.imageView1goed);
 						imageView1goed.setVisibility(ImageView.VISIBLE);
+						Log.d("hoi", String.valueOf(id));
 						}
 						if(id==2){
 						imageViewOmzettenBackground = (ImageView) findViewById(R.id.imageViewOmzettenBackground);
@@ -143,6 +145,7 @@ public class Buttons extends TextView{
 						imageView2goed.setVisibility(ImageView.VISIBLE);
 						imageView1goed = (ImageView) findViewById(R.id.imageView1goed);
 						imageView1goed.setVisibility(ImageView.GONE);
+						Log.d("hoi", String.valueOf(id));
 						}
 						if(id==3){
 						imageViewOmzettenBackground = (ImageView) findViewById(R.id.imageViewOmzettenBackground);
@@ -163,6 +166,7 @@ public class Buttons extends TextView{
 						imageView2goed.setVisibility(ImageView.GONE);
 						imageView1goed = (ImageView) findViewById(R.id.imageView1goed);
 						imageView1goed.setVisibility(ImageView.GONE);
+						Log.d("hoi", String.valueOf(id));
 						}
 						if(id==4){
 						imageViewOmzettenBackground = (ImageView) findViewById(R.id.imageViewOmzettenBackground);
@@ -183,6 +187,7 @@ public class Buttons extends TextView{
 						imageView2goed.setVisibility(ImageView.GONE);
 						imageView1goed = (ImageView) findViewById(R.id.imageView1goed);
 						imageView1goed.setVisibility(ImageView.GONE);
+						Log.d("hoi", String.valueOf(id));
 						}
 			}
 			else{
@@ -205,7 +210,7 @@ public class Buttons extends TextView{
 					imageView2goed.setVisibility(ImageView.GONE);
 					imageView1goed = (ImageView) findViewById(R.id.imageView1goed);
 					imageView1goed.setVisibility(ImageView.VISIBLE);
-					Log.d("Test1", "Button");
+					Log.d("hoi", String.valueOf(id));
 
 					}
 					if(id==2){
@@ -227,7 +232,7 @@ public class Buttons extends TextView{
 					imageView2goed.setVisibility(ImageView.VISIBLE);
 					imageView1goed = (ImageView) findViewById(R.id.imageView1goed);
 					imageView1goed.setVisibility(ImageView.GONE);
-					Log.d("Test2", "Button");
+					Log.d("hoi", String.valueOf(id));
 					}
 					if(id==3){
 					imageViewOmzettenBackground = (ImageView) findViewById(R.id.imageViewOmzettenBackground);
@@ -248,7 +253,7 @@ public class Buttons extends TextView{
 					imageView2goed.setVisibility(ImageView.GONE);
 					imageView1goed = (ImageView) findViewById(R.id.imageView1goed);
 					imageView1goed.setVisibility(ImageView.GONE);
-					Log.d("Test3", "Button");
+					Log.d("hoi", String.valueOf(id));
 					}
 					if(id==4){
 					imageViewOmzettenBackground = (ImageView) findViewById(R.id.imageViewOmzettenBackground);
@@ -269,7 +274,7 @@ public class Buttons extends TextView{
 					imageView2goed.setVisibility(ImageView.GONE);
 					imageView1goed = (ImageView) findViewById(R.id.imageView1goed);
 					imageView1goed.setVisibility(ImageView.GONE);
-					Log.d("Test4", "Button");
+					Log.d("hoi", String.valueOf(id));
 					}
 			
 			}

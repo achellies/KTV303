@@ -87,7 +87,7 @@ public class OmzettenActivity extends Activity
         this.startPoints.add( new Point( 227, 155 ) );
         this.startPoints.add( new Point( 424, 155 ) );
         this.startPoints.add( new Point( 610, 155 ) );
-        
+        this.startPoints.add( new Point( 300, 50 ) );
         
         //  shuffle the list with startpoints
         //shuffleList( this.startPoints );
@@ -97,15 +97,15 @@ public class OmzettenActivity extends Activity
         this.buttons.add( new Buttons( 2, this, this.romansTypeFace, this.startPoints.get(1) ) );
         this.buttons.add( new Buttons( 3, this, this.romansTypeFace, this.startPoints.get(2) ) );
         this.buttons.add( new Buttons( 4, this, this.romansTypeFace, this.startPoints.get(3) ) );
-        
+        this.buttons.add( new Buttons( 5, this, this.romansTypeFace, this.startPoints.get(4) ) );
         
         //  set combinations for exercises        
         this.allCombinations = new ArrayList<Combination>();
-        this.allCombinations.add( new Combination( "I", "V", "X", "L" ) );
-        this.allCombinations.add( new Combination( "IV", "XV", "LXX", "XC" ) );
-        this.allCombinations.add( new Combination( "III", "V", "XIV", "L" ) );
-        this.allCombinations.add( new Combination( "I", "II", "IV", "VI" ) );
-        this.allCombinations.add( new Combination( "L", "LX", "LXX", "C" ) );
+        this.allCombinations.add( new Combination( "I", "V", "X", "L", "…Èn = " ) );
+        this.allCombinations.add( new Combination( "IV", "XV", "LXX", "XC", "Negentig = " ) );
+        this.allCombinations.add( new Combination( "III", "V", "XIV", "L", "Veertien = " ) );
+        this.allCombinations.add( new Combination( "I", "II", "IV", "VI", "Twee = " ) );
+        this.allCombinations.add( new Combination( "L", "LX", "LXX", "C", "Honderd = " ) );
         //this.allCombinations.add( new Combination( "", "", "", "" ) ); 
          
         
@@ -131,6 +131,7 @@ public class OmzettenActivity extends Activity
         this.buttons.get( 1 ).setText( allCombinations.get( r ).getOption( 1 ) );
         this.buttons.get( 2 ).setText( allCombinations.get( r ).getOption( 2 ) );
         this.buttons.get( 3 ).setText( allCombinations.get( r ).getOption( 3 ) );
+        this.buttons.get( 4 ).setText( allCombinations.get( r ).getOption( 4 ) );
         
         for( Buttons buttons : this.buttons )
         {
