@@ -29,6 +29,8 @@ public class Buttons extends TextView{
 	private ImageView imageView2fout;
 	private ImageView imageView3fout;
 	private ImageView imageView4fout;
+	
+
 	private RelativeLayout.LayoutParams RLP;
 	private int startX;
 	private int startY;
@@ -67,7 +69,6 @@ public class Buttons extends TextView{
 			super.setClickable(true);
 					
 			this.id = buttonId;
-			AddListeners();
 
 
 		}
@@ -92,7 +93,7 @@ public class Buttons extends TextView{
 		
 	
 		
-	public void AddListeners()
+	public void addListenerOnButton()
 	{
 		TextView textviewclick = (TextView) findViewById( id );
 
@@ -100,8 +101,8 @@ public class Buttons extends TextView{
 
 		public void onClick(View arg0) {
 			TextView textviewclick = (TextView) findViewById( id );
+		
 			
-
 			if(textviewclick.getText().toString().equals("X") || textviewclick.getText().toString().equals("XC") || textviewclick.getText().toString().equals("XIV") || textviewclick.getText().toString().equals("I") || textviewclick.getText().toString().equals("C")) {
 						if(id==1){
 						imageViewOmzettenBackground = (ImageView) findViewById(R.id.imageViewOmzettenBackground);

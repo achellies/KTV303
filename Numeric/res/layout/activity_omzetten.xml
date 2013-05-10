@@ -7,10 +7,9 @@
     tools:context=".OmzettenActivity" >
 
     <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" 
-        android:id="@+id/RelativeLayout2"
-        >
+        android:id="@+id/ButtonLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
 
         <ImageView
             android:id="@+id/imageView1fout"
@@ -24,7 +23,6 @@
             android:id="@+id/imageView1goed"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
             android:contentDescription="@string/desc_omzetten_1goed"
             android:src="@drawable/hekje_open1"
             android:visibility="invisible" />
@@ -33,7 +31,6 @@
             android:id="@+id/imageView2fout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
             android:contentDescription="@string/desc_omzetten_2fout"
             android:src="@drawable/hekje_dicht2"
             android:visibility="invisible" />
@@ -42,7 +39,6 @@
             android:id="@+id/imageView3fout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
             android:contentDescription="@string/desc_omzetten_3fout"
             android:src="@drawable/hekje_dicht3"
             android:visibility="invisible" />
@@ -51,7 +47,6 @@
             android:id="@+id/imageView2goed"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
             android:contentDescription="@string/desc_omzetten_2goed"
             android:src="@drawable/hekje_open2"
             android:visibility="invisible" />
@@ -76,7 +71,6 @@
             android:id="@+id/imageView4goed"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
             android:contentDescription="@string/desc_omzetten_4goed"
             android:src="@drawable/hekje_open4"
             android:visibility="invisible" />
@@ -87,7 +81,6 @@
             android:layout_height="wrap_content"
             android:contentDescription="@string/desc_omzetten_background"
             android:src="@drawable/omzetspel_bg" />
-
     </RelativeLayout>
      
     <ImageButton
@@ -100,11 +93,5 @@
         android:background="@drawable/button_go_back"
         android:contentDescription="@string/desc_button_go_back"
         android:src="@drawable/button_go_back" />
-
-    <RelativeLayout
-        android:id="@+id/ButtonLayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" >
-    </RelativeLayout>
 
 </RelativeLayout>
