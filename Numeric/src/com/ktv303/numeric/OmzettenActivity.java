@@ -87,7 +87,7 @@ public class OmzettenActivity extends Activity
         this.startPoints.add( new Point( 227, 155 ) );
         this.startPoints.add( new Point( 424, 155 ) );
         this.startPoints.add( new Point( 610, 155 ) );
-        this.startPoints.add( new Point( 300, 50 ) );
+        this.startPoints.add( new Point( 227, 50 ) );
         
         //  shuffle the list with startpoints
         //shuffleList( this.startPoints );

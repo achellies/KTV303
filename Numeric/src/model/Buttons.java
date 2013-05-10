@@ -50,20 +50,13 @@ public class Buttons extends TextView{
 			//  set text size
 			super.setTextSize( 80 );
 			//  set text color
-			TextView textviewclick = (TextView) findViewById( id );
 			
-			if(textviewclick.getText().toString().equals("…Èn = ") || textviewclick.getText().toString().equals("Twee = ") || textviewclick.getText().toString().equals("Veertien = ") || textviewclick.getText().toString().equals("Honderd = ") || textviewclick.getText().toString().equals("Negentig = ")) {
-			super.setTextColor( getResources().getColor( R.color.Black ) );
-			}
-			else{
-			super.setTextColor( getResources().getColor( R.color.White ) );
-			}
-			//  set background color
+			
+			//  set background color	
 			super.setBackgroundColor(Color.TRANSPARENT);
 			//  set height of number
 			super.setHeight( 150 );
 			//  set width of number
-			super.setWidth( 150 );
 			//  set horizontal and vertical alignment
 			super.setGravity( Gravity.CENTER_VERTICAL | Gravity.CENTER_HORIZONTAL );
 			//  set padding top
@@ -76,6 +69,51 @@ public class Buttons extends TextView{
 			super.setClickable(true);
 					
 			this.id = buttonId;
+			
+				if(id==5){
+				TextView textviewvraag5 = (TextView) findViewById( id );
+				textviewvraag5.setTextColor(getResources().getColor( R.color.Black));
+				}
+				if(id==4){
+				TextView textviewvraag4 = (TextView) findViewById( id );	
+				textviewvraag4.setTextColor(getResources().getColor( R.color.White));	
+				}
+				if(id==3){
+				TextView textviewvraag3 = (TextView) findViewById( id );	
+				textviewvraag3.setTextColor(getResources().getColor( R.color.White));	
+				}
+				if(id==2){
+				TextView textviewvraag2 = (TextView) findViewById( id );	
+				textviewvraag2.setTextColor(getResources().getColor( R.color.White));	
+				}
+				if(id==1){
+				TextView textviewvraag1 = (TextView) findViewById( id );
+				textviewvraag1.setTextColor(getResources().getColor( R.color.White));	
+				}
+				
+				if(id==5){
+				TextView textviewvraag5 = (TextView) findViewById( id );
+				textviewvraag5.setWidth( 600 );
+				}
+				if(id==4){
+				TextView textviewvraag4 = (TextView) findViewById( id );	
+				textviewvraag4.setWidth( 150 );	
+				}
+				if(id==3){
+				TextView textviewvraag3 = (TextView) findViewById( id );	
+				textviewvraag3.setWidth( 150 );	
+				}
+				if(id==2){
+				TextView textviewvraag2 = (TextView) findViewById( id );	
+				textviewvraag2.setWidth( 150 );	
+				}
+				if(id==1){
+				TextView textviewvraag1 = (TextView) findViewById( id );
+				textviewvraag1.setWidth( 150 );	
+				}
+				
+				
+			
 			addListenerOnButton();
 
 
