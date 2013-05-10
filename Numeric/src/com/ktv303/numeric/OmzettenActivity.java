@@ -90,7 +90,7 @@ public class OmzettenActivity extends Activity
         
         
         //  shuffle the list with startpoints
-        shuffleList( this.startPoints );
+        //shuffleList( this.startPoints );
         
         //  add four new buttons
         this.buttons.add( new Buttons( 1, this, this.romansTypeFace, this.startPoints.get(0) ) );
@@ -153,10 +153,8 @@ public class OmzettenActivity extends Activity
 			
 		});
 		
-			
-		
-		
-		
+    
+	
 
 		
      /**
@@ -183,7 +181,7 @@ public class OmzettenActivity extends Activity
 	
 	}
     
-    public static void shuffleList( List<Point> a )
+    /**public static void shuffleList( List<Point> a )
 	{
 	    int n = a.size();
 	    Random random = new Random();
@@ -201,5 +199,6 @@ public class OmzettenActivity extends Activity
 	    a.set(i, a.get(change));
 	    a.set(change, helper);
 	}
+	**/
 	
 }

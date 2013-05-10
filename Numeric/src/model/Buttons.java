@@ -19,7 +19,7 @@ import android.widget.TextView;
 
 
 
-public class Buttons extends TextView implements OnClickListener{
+public class Buttons extends TextView{
 	private ImageView imageViewOmzettenBackground;
 	private ImageView imageView1goed;
 	private ImageView imageView2goed;
@@ -35,6 +35,10 @@ public class Buttons extends TextView implements OnClickListener{
 	private boolean answer;
 	private int id;
 	private RelativeLayout ButtonLayout;
+	private RelativeLayout RelativeLayout;
+	private int answerID;
+
+	
 
 	
 	
@@ -57,12 +61,15 @@ public class Buttons extends TextView implements OnClickListener{
 			super.setGravity( Gravity.CENTER_VERTICAL | Gravity.CENTER_HORIZONTAL );
 			//  set padding top
 			super.setPadding( 0, 5, 0, 0 );
+			// set id
+			super.setId(buttonId);
 			
 			super.setFocusable( true );
 			
 			super.setClickable(true);
 			
 			this.id = buttonId;
+			AddListeners();
 
 
 		}
@@ -85,7 +92,7 @@ public class Buttons extends TextView implements OnClickListener{
 		}
 			
 		
-		private void good(int id)
+		public void good(View arg0)
 		// Kijkt welke knop ingedrukt is (weet niet of dit werkt) en stelt het bijbehorende hekje op groen
 		{
 			if(id==1){
@@ -107,8 +114,11 @@ public class Buttons extends TextView implements OnClickListener{
 			imageView2goed.setVisibility(ImageView.GONE);
 			imageView1goed = (ImageView) findViewById(R.id.imageView1goed);
 			imageView1goed.setVisibility(ImageView.VISIBLE);
+			Log.d("Test1", "Button");
+
 			}
 			if(id==2){
+				/**
 				imageViewOmzettenBackground = (ImageView) findViewById(R.id.imageViewOmzettenBackground);
 				imageViewOmzettenBackground.setVisibility(ImageView.GONE);
 				imageView4fout = (ImageView) findViewById(R.id.imageView4fout);
@@ -127,8 +137,12 @@ public class Buttons extends TextView implements OnClickListener{
 				imageView2goed.setVisibility(ImageView.VISIBLE);
 				imageView1goed = (ImageView) findViewById(R.id.imageView1goed);
 				imageView1goed.setVisibility(ImageView.GONE);
+				*/
+				Log.d("Test2", "Button");
+
 				}
 			if(id==3){
+				/**
 				imageViewOmzettenBackground = (ImageView) findViewById(R.id.imageViewOmzettenBackground);
 				imageViewOmzettenBackground.setVisibility(ImageView.GONE);
 				imageView4fout = (ImageView) findViewById(R.id.imageView4fout);
@@ -147,8 +161,12 @@ public class Buttons extends TextView implements OnClickListener{
 				imageView2goed.setVisibility(ImageView.GONE);
 				imageView1goed = (ImageView) findViewById(R.id.imageView1goed);
 				imageView1goed.setVisibility(ImageView.GONE);
+				**/
+				Log.d("Test3", "Button");
+
 				}
 			if(id==4){
+				/**
 				imageViewOmzettenBackground = (ImageView) findViewById(R.id.imageViewOmzettenBackground);
 				imageViewOmzettenBackground.setVisibility(ImageView.GONE);
 				imageView4fout = (ImageView) findViewById(R.id.imageView4fout);
@@ -167,11 +185,14 @@ public class Buttons extends TextView implements OnClickListener{
 				imageView2goed.setVisibility(ImageView.GONE);
 				imageView1goed = (ImageView) findViewById(R.id.imageView1goed);
 				imageView1goed.setVisibility(ImageView.GONE);
+				**/
+				Log.d("Test4", "Button");
+
 				}
 			
 		}
 		
-		public void wrong(int id)
+		public void wrong(View arg0)
 		// Kijkt welke knop ingedrukt is (weet niet of dit werkt) en stelt het bijbehorende hekje op rood
 		{
 			if(id==1){
@@ -193,6 +214,7 @@ public class Buttons extends TextView implements OnClickListener{
 				imageView2goed.setVisibility(ImageView.GONE);
 				imageView1goed = (ImageView) findViewById(R.id.imageView1goed);
 				imageView1goed.setVisibility(ImageView.GONE);
+				Log.d("Test1", "Button");
 				}
 			if(id==2){
 				imageViewOmzettenBackground = (ImageView) findViewById(R.id.imageViewOmzettenBackground);
@@ -213,6 +235,8 @@ public class Buttons extends TextView implements OnClickListener{
 				imageView2goed.setVisibility(ImageView.GONE);
 				imageView1goed = (ImageView) findViewById(R.id.imageView1goed);
 				imageView1goed.setVisibility(ImageView.GONE);
+				Log.d("Test2", "Button");
+
 				}
 			if(id==3){
 				imageViewOmzettenBackground = (ImageView) findViewById(R.id.imageViewOmzettenBackground);
@@ -233,6 +257,8 @@ public class Buttons extends TextView implements OnClickListener{
 				imageView2goed.setVisibility(ImageView.GONE);
 				imageView1goed = (ImageView) findViewById(R.id.imageView1goed);
 				imageView1goed.setVisibility(ImageView.GONE);
+				Log.d("Test3", "Button");
+
 				}
 			if(id==4){
 				imageViewOmzettenBackground = (ImageView) findViewById(R.id.imageViewOmzettenBackground);
@@ -253,31 +279,52 @@ public class Buttons extends TextView implements OnClickListener{
 				imageView2goed.setVisibility(ImageView.GONE);
 				imageView1goed = (ImageView) findViewById(R.id.imageView1goed);
 				imageView1goed.setVisibility(ImageView.GONE);
+				Log.d("Test4", "Button");
 				}
 			
 		}
 		
-		@Override
+	public void AddListeners()
+	{
+		TextView textviewclick = (TextView) findViewById( id );
+
+		textviewclick.setOnClickListener(new OnClickListener(){
+
 		public void onClick(View arg0) {
-			TextView TextViewClick = (TextView) findViewById ( id );
-			if(TextViewClick.getText().toString().equals("X") || TextViewClick.getText().toString().equals("XC") || TextViewClick.getText().toString().equals("XIV") || TextViewClick.getText().toString().equals("I") || TextViewClick.getText().toString().equals("C")) {
+			TextView textviewclick = (TextView) findViewById( id );
+
+
+			if(textviewclick.getText().toString().equals("X") || textviewclick.getText().toString().equals("XC") || textviewclick.getText().toString().equals("XIV") || textviewclick.getText().toString().equals("I") || textviewclick.getText().toString().equals("C")) {
 				answer = true;
+				Log.d("SOMETHING", "Content");
+				checkAnswer();
 			}
 			else{
 				answer = false;
+				Log.d("YES", "Content");
+				checkAnswer();
+
 			}
 		}
+		});
+		
+	}
 		
 		public void checkAnswer()
 		{
 			// Kijkt of het aangedrukte knopje een goed of fout antwoord is, dit klopt nog niet, kan jij ff uitzoeken?
-			if( answer = true)
+			if(answer == true)
 			{
 				//  correct answer was given
-				good(id);
-			} else {
+				good(RelativeLayout);
+				Log.d("hoi", String.valueOf(id));
+
+
+			}
+			else {
 				//  wrong answer was given
-				wrong(id);
+				wrong(RelativeLayout);
+				Log.println(id, "yolo", String.valueOf(id));
 			}
 		}
 
