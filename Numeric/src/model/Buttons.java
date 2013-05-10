@@ -153,7 +153,7 @@ public class Buttons extends TextView{
 						if(id==1){
 						imageViewOmzettenBackground = (ImageView) findViewById(R.id.imageViewOmzettenBackground);
 						imageViewOmzettenBackground.setVisibility(ImageView.GONE);
-						imageView4fout = (ImageView) findViewById(R.id.imageView4fout);
+						/**imageView4fout = (ImageView) findViewById(R.id.imageView4fout);
 						imageView4fout.setVisibility(ImageView.GONE);
 						imageView3fout = (ImageView) findViewById(R.id.imageView3fout);
 						imageView3fout.setVisibility(ImageView.GONE);
@@ -166,7 +166,7 @@ public class Buttons extends TextView{
 						imageView3goed = (ImageView) findViewById(R.id.imageView3goed);
 						imageView3goed.setVisibility(ImageView.GONE);
 						imageView2goed = (ImageView) findViewById(R.id.imageView2goed);
-						imageView2goed.setVisibility(ImageView.GONE);
+						imageView2goed.setVisibility(ImageView.GONE);**/
 						imageView1goed = (ImageView) findViewById(R.id.imageView1goed);
 						imageView1goed.setVisibility(ImageView.VISIBLE);
 						Log.d("hoi", String.valueOf(id));
@@ -174,7 +174,7 @@ public class Buttons extends TextView{
 						if(id==2){
 						imageViewOmzettenBackground = (ImageView) findViewById(R.id.imageViewOmzettenBackground);
 						imageViewOmzettenBackground.setVisibility(ImageView.GONE);
-						imageView4fout = (ImageView) findViewById(R.id.imageView4fout);
+						/**imageView4fout = (ImageView) findViewById(R.id.imageView4fout);
 						imageView4fout.setVisibility(ImageView.GONE);
 						imageView3fout = (ImageView) findViewById(R.id.imageView3fout);
 						imageView3fout.setVisibility(ImageView.GONE);
@@ -185,17 +185,17 @@ public class Buttons extends TextView{
 						imageView4goed = (ImageView) findViewById(R.id.imageView4goed);
 						imageView4goed.setVisibility(ImageView.GONE);
 						imageView3goed = (ImageView) findViewById(R.id.imageView3goed);
-						imageView3goed.setVisibility(ImageView.GONE);
+						imageView3goed.setVisibility(ImageView.GONE);**/
 						imageView2goed = (ImageView) findViewById(R.id.imageView2goed);
 						imageView2goed.setVisibility(ImageView.VISIBLE);
-						imageView1goed = (ImageView) findViewById(R.id.imageView1goed);
-						imageView1goed.setVisibility(ImageView.GONE);
+						//imageView1goed = (ImageView) findViewById(R.id.imageView1goed);
+						//imageView1goed.setVisibility(ImageView.GONE);
 						Log.d("hoi", String.valueOf(id));
 						}
 						if(id==3){
 						imageViewOmzettenBackground = (ImageView) findViewById(R.id.imageViewOmzettenBackground);
 						imageViewOmzettenBackground.setVisibility(ImageView.GONE);
-						imageView4fout = (ImageView) findViewById(R.id.imageView4fout);
+						/**imageView4fout = (ImageView) findViewById(R.id.imageView4fout);
 						imageView4fout.setVisibility(ImageView.GONE);
 						imageView3fout = (ImageView) findViewById(R.id.imageView3fout);
 						imageView3fout.setVisibility(ImageView.GONE);
@@ -204,34 +204,34 @@ public class Buttons extends TextView{
 						imageView1fout = (ImageView) findViewById(R.id.imageView1fout);
 						imageView1fout.setVisibility(ImageView.GONE);
 						imageView4goed = (ImageView) findViewById(R.id.imageView4goed);
-						imageView4goed.setVisibility(ImageView.GONE);
+						imageView4goed.setVisibility(ImageView.GONE);**/
 						imageView3goed = (ImageView) findViewById(R.id.imageView3goed);
 						imageView3goed.setVisibility(ImageView.VISIBLE);
-						imageView2goed = (ImageView) findViewById(R.id.imageView2goed);
-						imageView2goed.setVisibility(ImageView.GONE);
-						imageView1goed = (ImageView) findViewById(R.id.imageView1goed);
-						imageView1goed.setVisibility(ImageView.GONE);
+						//imageView2goed = (ImageView) findViewById(R.id.imageView2goed);
+						//imageView2goed.setVisibility(ImageView.GONE);
+						//imageView1goed = (ImageView) findViewById(R.id.imageView1goed);
+						//imageView1goed.setVisibility(ImageView.GONE);
 						Log.d("hoi", String.valueOf(id));
 						}
 						if(id==4){
 						imageViewOmzettenBackground = (ImageView) findViewById(R.id.imageViewOmzettenBackground);
 						imageViewOmzettenBackground.setVisibility(ImageView.GONE);
-						imageView4fout = (ImageView) findViewById(R.id.imageView4fout);
+						/**imageView4fout = (ImageView) findViewById(R.id.imageView4fout);
 						imageView4fout.setVisibility(ImageView.GONE);
 						imageView3fout = (ImageView) findViewById(R.id.imageView3fout);
 						imageView3fout.setVisibility(ImageView.GONE);
 						imageView2fout = (ImageView) findViewById(R.id.imageView2fout);
 						imageView2fout.setVisibility(ImageView.GONE);
 						imageView1fout = (ImageView) findViewById(R.id.imageView1fout);
-						imageView1fout.setVisibility(ImageView.GONE);
+						imageView1fout.setVisibility(ImageView.GONE);**/
 						imageView4goed = (ImageView) findViewById(R.id.imageView4goed);
 						imageView4goed.setVisibility(ImageView.VISIBLE);
-						imageView3goed = (ImageView) findViewById(R.id.imageView3goed);
+						/**imageView3goed = (ImageView) findViewById(R.id.imageView3goed);
 						imageView3goed.setVisibility(ImageView.GONE);
 						imageView2goed = (ImageView) findViewById(R.id.imageView2goed);
 						imageView2goed.setVisibility(ImageView.GONE);
 						imageView1goed = (ImageView) findViewById(R.id.imageView1goed);
-						imageView1goed.setVisibility(ImageView.GONE);
+						imageView1goed.setVisibility(ImageView.GONE);**/
 						Log.d("hoi", String.valueOf(id));
 						}
 			}
@@ -239,7 +239,7 @@ public class Buttons extends TextView{
 					if(id==1){
 					imageViewOmzettenBackground = (ImageView) findViewById(R.id.imageViewOmzettenBackground);
 					imageViewOmzettenBackground.setVisibility(ImageView.GONE);
-					imageView4fout = (ImageView) findViewById(R.id.imageView4fout);
+					/**imageView4fout = (ImageView) findViewById(R.id.imageView4fout);
 					imageView4fout.setVisibility(ImageView.GONE);
 					imageView3fout = (ImageView) findViewById(R.id.imageView3fout);
 					imageView3fout.setVisibility(ImageView.GONE);
@@ -252,7 +252,7 @@ public class Buttons extends TextView{
 					imageView3goed = (ImageView) findViewById(R.id.imageView3goed);
 					imageView3goed.setVisibility(ImageView.GONE);
 					imageView2goed = (ImageView) findViewById(R.id.imageView2goed);
-					imageView2goed.setVisibility(ImageView.GONE);
+					imageView2goed.setVisibility(ImageView.GONE);**/
 					imageView1goed = (ImageView) findViewById(R.id.imageView1goed);
 					imageView1goed.setVisibility(ImageView.VISIBLE);
 					Log.d("hoi", String.valueOf(id));
@@ -261,7 +261,7 @@ public class Buttons extends TextView{
 					if(id==2){
 					imageViewOmzettenBackground = (ImageView) findViewById(R.id.imageViewOmzettenBackground);
 					imageViewOmzettenBackground.setVisibility(ImageView.GONE);
-					imageView4fout = (ImageView) findViewById(R.id.imageView4fout);
+					/**imageView4fout = (ImageView) findViewById(R.id.imageView4fout);
 					imageView4fout.setVisibility(ImageView.GONE);
 					imageView3fout = (ImageView) findViewById(R.id.imageView3fout);
 					imageView3fout.setVisibility(ImageView.GONE);
@@ -272,17 +272,17 @@ public class Buttons extends TextView{
 					imageView4goed = (ImageView) findViewById(R.id.imageView4goed);
 					imageView4goed.setVisibility(ImageView.GONE);
 					imageView3goed = (ImageView) findViewById(R.id.imageView3goed);
-					imageView3goed.setVisibility(ImageView.GONE);
+					imageView3goed.setVisibility(ImageView.GONE);**/
 					imageView2goed = (ImageView) findViewById(R.id.imageView2goed);
 					imageView2goed.setVisibility(ImageView.VISIBLE);
-					imageView1goed = (ImageView) findViewById(R.id.imageView1goed);
-					imageView1goed.setVisibility(ImageView.GONE);
+					//imageView1goed = (ImageView) findViewById(R.id.imageView1goed);
+					//imageView1goed.setVisibility(ImageView.GONE);
 					Log.d("hoi", String.valueOf(id));
 					}
 					if(id==3){
 					imageViewOmzettenBackground = (ImageView) findViewById(R.id.imageViewOmzettenBackground);
 					imageViewOmzettenBackground.setVisibility(ImageView.GONE);
-					imageView4fout = (ImageView) findViewById(R.id.imageView4fout);
+					/**imageView4fout = (ImageView) findViewById(R.id.imageView4fout);
 					imageView4fout.setVisibility(ImageView.GONE);
 					imageView3fout = (ImageView) findViewById(R.id.imageView3fout);
 					imageView3fout.setVisibility(ImageView.GONE);
@@ -291,34 +291,34 @@ public class Buttons extends TextView{
 					imageView1fout = (ImageView) findViewById(R.id.imageView1fout);
 					imageView1fout.setVisibility(ImageView.GONE);
 					imageView4goed = (ImageView) findViewById(R.id.imageView4goed);
-					imageView4goed.setVisibility(ImageView.GONE);
+					imageView4goed.setVisibility(ImageView.GONE);**/
 					imageView3goed = (ImageView) findViewById(R.id.imageView3goed);
 					imageView3goed.setVisibility(ImageView.VISIBLE);
-					imageView2goed = (ImageView) findViewById(R.id.imageView2goed);
+					/**imageView2goed = (ImageView) findViewById(R.id.imageView2goed);
 					imageView2goed.setVisibility(ImageView.GONE);
 					imageView1goed = (ImageView) findViewById(R.id.imageView1goed);
-					imageView1goed.setVisibility(ImageView.GONE);
+					imageView1goed.setVisibility(ImageView.GONE);**/
 					Log.d("hoi", String.valueOf(id));
 					}
 					if(id==4){
 					imageViewOmzettenBackground = (ImageView) findViewById(R.id.imageViewOmzettenBackground);
 					imageViewOmzettenBackground.setVisibility(ImageView.GONE);
-					imageView4fout = (ImageView) findViewById(R.id.imageView4fout);
+					/**imageView4fout = (ImageView) findViewById(R.id.imageView4fout);
 					imageView4fout.setVisibility(ImageView.GONE);
 					imageView3fout = (ImageView) findViewById(R.id.imageView3fout);
 					imageView3fout.setVisibility(ImageView.GONE);
 					imageView2fout = (ImageView) findViewById(R.id.imageView2fout);
 					imageView2fout.setVisibility(ImageView.GONE);
 					imageView1fout = (ImageView) findViewById(R.id.imageView1fout);
-					imageView1fout.setVisibility(ImageView.GONE);
+					imageView1fout.setVisibility(ImageView.GONE);**/
 					imageView4goed = (ImageView) findViewById(R.id.imageView4goed);
 					imageView4goed.setVisibility(ImageView.VISIBLE);
-					imageView3goed = (ImageView) findViewById(R.id.imageView3goed);
+					/**imageView3goed = (ImageView) findViewById(R.id.imageView3goed);
 					imageView3goed.setVisibility(ImageView.GONE);
 					imageView2goed = (ImageView) findViewById(R.id.imageView2goed);
 					imageView2goed.setVisibility(ImageView.GONE);
 					imageView1goed = (ImageView) findViewById(R.id.imageView1goed);
-					imageView1goed.setVisibility(ImageView.GONE);
+					imageView1goed.setVisibility(ImageView.GONE);**/
 					Log.d("hoi", String.valueOf(id));
 					}
 			

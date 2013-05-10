@@ -17,7 +17,7 @@
             android:layout_height="wrap_content"
             android:contentDescription="@string/desc_omzetten_1fout"
             android:src="@drawable/hekje_dicht1"
-            android:visibility="invisible" />
+            android:visibility="gone" />
 
         <ImageView
             android:id="@+id/imageView1goed"
@@ -25,7 +25,7 @@
             android:layout_height="wrap_content"
             android:contentDescription="@string/desc_omzetten_1goed"
             android:src="@drawable/hekje_open1"
-            android:visibility="invisible" />
+            android:visibility="gone" />
 
         <ImageView
             android:id="@+id/imageView2fout"
@@ -33,7 +33,7 @@
             android:layout_height="wrap_content"
             android:contentDescription="@string/desc_omzetten_2fout"
             android:src="@drawable/hekje_dicht2"
-            android:visibility="invisible" />
+            android:visibility="gone" />
 
         <ImageView
             android:id="@+id/imageView3fout"
@@ -41,7 +41,7 @@
             android:layout_height="wrap_content"
             android:contentDescription="@string/desc_omzetten_3fout"
             android:src="@drawable/hekje_dicht3"
-            android:visibility="invisible" />
+            android:visibility="gone" />
 
         <ImageView
             android:id="@+id/imageView2goed"
@@ -49,7 +49,7 @@
             android:layout_height="wrap_content"
             android:contentDescription="@string/desc_omzetten_2goed"
             android:src="@drawable/hekje_open2"
-            android:visibility="invisible" />
+            android:visibility="gone" />
 
         <ImageView
             android:id="@+id/imageView3goed"
@@ -57,7 +57,7 @@
             android:layout_height="wrap_content"
             android:contentDescription="@string/desc_omzetten_3goed"
             android:src="@drawable/hekje_open3"
-            android:visibility="invisible" />
+            android:visibility="gone" />
 
         <ImageView
             android:id="@+id/imageView4fout"
@@ -65,7 +65,7 @@
             android:layout_height="wrap_content"
             android:contentDescription="@string/desc_omzetten_4fout"
             android:src="@drawable/hekje_dicht4"
-            android:visibility="invisible" />
+            android:visibility="gone" />
 
         <ImageView
             android:id="@+id/imageView4goed"
@@ -73,7 +73,7 @@
             android:layout_height="wrap_content"
             android:contentDescription="@string/desc_omzetten_4goed"
             android:src="@drawable/hekje_open4"
-            android:visibility="invisible" />
+            android:visibility="gone" />
 
         <ImageView
             android:id="@+id/imageViewOmzettenBackground"
@@ -81,6 +81,7 @@
             android:layout_height="wrap_content"
             android:contentDescription="@string/desc_omzetten_background"
             android:src="@drawable/omzetspel_bg" />
+
     </RelativeLayout>
      
     <ImageButton
