@@ -7,73 +7,21 @@
     tools:context=".OmzettenActivity" >
 
     <RelativeLayout
-        android:id="@+id/ButtonLayout"
+        android:id="@+id/gateLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent" >
-
-        <ImageView
-            android:id="@+id/imageView1fout"
+        
+        <ImageButton
+            android:id="@+id/imageButtonNextGame"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:contentDescription="@string/desc_omzetten_1fout"
-            android:src="@drawable/hekje_dicht1"
-            android:visibility="gone" />
-
-        <ImageView
-            android:id="@+id/imageView1goed"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:contentDescription="@string/desc_omzetten_1goed"
-            android:src="@drawable/hekje_open1"
-            android:visibility="gone" />
-
-        <ImageView
-            android:id="@+id/imageView2fout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:contentDescription="@string/desc_omzetten_2fout"
-            android:src="@drawable/hekje_dicht2"
-            android:visibility="gone" />
-
-        <ImageView
-            android:id="@+id/imageView3fout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:contentDescription="@string/desc_omzetten_3fout"
-            android:src="@drawable/hekje_dicht3"
-            android:visibility="gone" />
-
-        <ImageView
-            android:id="@+id/imageView2goed"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:contentDescription="@string/desc_omzetten_2goed"
-            android:src="@drawable/hekje_open2"
-            android:visibility="gone" />
-
-        <ImageView
-            android:id="@+id/imageView3goed"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:contentDescription="@string/desc_omzetten_3goed"
-            android:src="@drawable/hekje_open3"
-            android:visibility="gone" />
-
-        <ImageView
-            android:id="@+id/imageView4fout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:contentDescription="@string/desc_omzetten_4fout"
-            android:src="@drawable/hekje_dicht4"
-            android:visibility="gone" />
-
-        <ImageView
-            android:id="@+id/imageView4goed"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:contentDescription="@string/desc_omzetten_4goed"
-            android:src="@drawable/hekje_open4"
-            android:visibility="gone" />
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="19dp"
+            android:background="@drawable/volgende"
+            android:contentDescription="@string/desc_button_go_back"
+            android:src="@drawable/volgende"
+            android:visibility="invisible" />
 
         <ImageView
             android:id="@+id/imageViewOmzettenBackground"

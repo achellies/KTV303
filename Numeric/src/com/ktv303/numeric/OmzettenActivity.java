@@ -4,21 +4,16 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import model.Buttons;
 import model.Combination;
-import model.Number;
+import model.Gate;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Point;
 import android.graphics.Typeface;
 import android.os.Bundle;
-import android.os.Handler;
-import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -29,11 +24,11 @@ public class OmzettenActivity extends Activity
 	//  ImageButton imageButtonGoBack
 	private ImageButton imageButtonGoBack;
 	//  ImageButton imageButtonNext
-	private ImageButton imageButtonNext;
+	private ImageButton imageButtonNextGame;
 	//  List Number numbers
-	private List<Buttons> buttons;
-	//  int numberID
-	private int buttonID;
+	private List<Gate> gates;
+	//  int gateID
+	private int gateID;
 	//  int highscore
 	private int highscore;
 	//  int gameCount
@@ -42,16 +37,12 @@ public class OmzettenActivity extends Activity
 	private ArrayList<Integer> combiAlreadyAnswered;
 	//  Typeface romansTypeFace
 	private Typeface romansTypeFace;
-	//  List Point startPoints
-	private List<Point> startPoints;
 	//  List allCombinations
 	private List<Combination> allCombinations;
-	//  RelativeLayout relativeLayout
-	private RelativeLayout ButtonLayout;
-	
-
-	
-
+	//  RelativeLayout gateLayout
+	private RelativeLayout gateLayout;
+	//  OmzettenActivity activity
+	private OmzettenActivity activity;
 	
     @Override
     public void onCreate(Bundle savedInstanceState)
@@ -60,9 +51,11 @@ public class OmzettenActivity extends Activity
         
         setContentView( R.layout.activity_omzetten );
         
+        this.activity = this;
+        
         //  set imagebuttons
         this.imageButtonGoBack = (ImageButton) findViewById( R.id.imageButtonGoBack );
-        this.imageButtonNext = (ImageButton) findViewById( R.id.imageButtonNext );
+        this.imageButtonNextGame = (ImageButton) findViewById( R.id.imageButtonNextGame );
         
         //  get Extra's
         Bundle bundle = getIntent().getExtras();
@@ -70,45 +63,24 @@ public class OmzettenActivity extends Activity
         this.gameCount = bundle.getInt( "gameCount" ) + 1;
         this.combiAlreadyAnswered = bundle.getIntegerArrayList( "combiAlreadyAnswered" );
         
+        //  set gateid and gates array
+        this.gateID = 0;
+        this.gates = new ArrayList<Gate>();
         
-        //  set buttonid and buttons array
-        this.buttonID = 0;
-        this.buttons = new ArrayList<Buttons>();
-        
-        //  ButtonLayout
-        this.ButtonLayout = (RelativeLayout) findViewById( R.id.ButtonLayout );
+        //  GateLayout
+        this.gateLayout = (RelativeLayout) findViewById( R.id.gateLayout );
         
         //  set font
         this.romansTypeFace = Typeface.createFromAsset( getAssets(), "fonts/font.ttf" );
         
-        //  create four new startpoints for numbers
-        this.startPoints = new ArrayList<Point>();
-        this.startPoints.add( new Point( 34, 155 ) );
-        this.startPoints.add( new Point( 227, 155 ) );
-        this.startPoints.add( new Point( 424, 155 ) );
-        this.startPoints.add( new Point( 610, 155 ) );
-        this.startPoints.add( new Point( 227, 50 ) );
-        
-        //  shuffle the list with startpoints
-        //shuffleList( this.startPoints );
-        
-        //  add four new buttons
-        this.buttons.add( new Buttons( 1, this, this.romansTypeFace, this.startPoints.get(0) ) );
-        this.buttons.add( new Buttons( 2, this, this.romansTypeFace, this.startPoints.get(1) ) );
-        this.buttons.add( new Buttons( 3, this, this.romansTypeFace, this.startPoints.get(2) ) );
-        this.buttons.add( new Buttons( 4, this, this.romansTypeFace, this.startPoints.get(3) ) );
-        this.buttons.add( new Buttons( 5, this, this.romansTypeFace, this.startPoints.get(4) ) );
-        
         //  set combinations for exercises        
         this.allCombinations = new ArrayList<Combination>();
-        this.allCombinations.add( new Combination( "I", "V", "X", "L", "…Èn = " ) );
-        this.allCombinations.add( new Combination( "IV", "XV", "LXX", "XC", "Negentig = " ) );
-        this.allCombinations.add( new Combination( "III", "V", "XIV", "L", "Veertien = " ) );
-        this.allCombinations.add( new Combination( "I", "II", "IV", "VI", "Twee = " ) );
-        this.allCombinations.add( new Combination( "L", "LX", "LXX", "C", "Honderd = " ) );
-        //this.allCombinations.add( new Combination( "", "", "", "" ) ); 
-         
-        
+        this.allCombinations.add( new Combination( "I", "V", "X", "L", "Tien", "X" ) );
+        this.allCombinations.add( new Combination( "IV", "XV", "LXX", "XC", "Vier", "IV" ) );
+        this.allCombinations.add( new Combination( "III", "V", "XIV", "L", "Vijftig", "L" ) );
+        this.allCombinations.add( new Combination( "I", "II", "IV", "VI", "Twee", "II" ) );
+        this.allCombinations.add( new Combination( "L", "LX", "LXX", "C", "Honderd", "C" ) );
+        //this.allCombinations.add( new Combination( "", "", "", "" ) );
         
         //  generate new random number
         Random random = new Random();
@@ -126,40 +98,47 @@ public class OmzettenActivity extends Activity
         }
         this.combiAlreadyAnswered.add( r );
         
-	    //  set new texts based on random number and combination
-        this.buttons.get( 0 ).setText( allCombinations.get( r ).getOption( 0 ) );
-        this.buttons.get( 1 ).setText( allCombinations.get( r ).getOption( 1 ) );
-        this.buttons.get( 2 ).setText( allCombinations.get( r ).getOption( 2 ) );
-        this.buttons.get( 3 ).setText( allCombinations.get( r ).getOption( 3 ) );
-        this.buttons.get( 4 ).setText( allCombinations.get( r ).getOption( 4 ) );
+        //  add four new gates
+        this.gates.add( new Gate( 1, this, this.romansTypeFace, new Point( 61, 175 ), this.allCombinations.get( r ).getOption( 5 ), activity ) );
+        this.gates.add( new Gate( 2, this, this.romansTypeFace, new Point( 255, 176 ), this.allCombinations.get( r ).getOption( 5 ), activity ) );
+        this.gates.add( new Gate( 3, this, this.romansTypeFace, new Point( 446, 175 ), this.allCombinations.get( r ).getOption( 5 ), activity ) );
+        this.gates.add( new Gate( 4, this, this.romansTypeFace, new Point( 641, 175 ), this.allCombinations.get( r ).getOption( 5 ), activity ) );
         
-        for( Buttons buttons : this.buttons )
+        TextView txtViewQuestion = new TextView( this );
+        txtViewQuestion.setText( this.allCombinations.get( r ).getOption( 4 ) + " = " );
+        txtViewQuestion.setTypeface( this.romansTypeFace );
+        txtViewQuestion.setTextSize( 60 );
+        txtViewQuestion.setPadding( 60, 40, 0, 0 );
+        txtViewQuestion.setTextColor( getResources().getColor( R.color.Black ) );
+        
+	    //  set new texts based on random number and combination
+        this.gates.get( 0 ).setText( allCombinations.get( r ).getOption( 0 ) );
+        this.gates.get( 1 ).setText( allCombinations.get( r ).getOption( 1 ) );
+        this.gates.get( 2 ).setText( allCombinations.get( r ).getOption( 2 ) );
+        this.gates.get( 3 ).setText( allCombinations.get( r ).getOption( 3 ) );
+        
+        this.gateLayout.addView( txtViewQuestion );
+        
+        for( Gate gate : this.gates )
         {
-        	this.ButtonLayout.addView( buttons, buttons.getRLP() );
+        	this.gateLayout.addView( gate, gate.getRLP() );
+        	this.gateLayout.addView( gate.getTxtView(), gate.getTxtRLP() );
         }
         
         addListenerOnButton();
-
     }
     
     public void addListenerOnButton()
     { 
 		imageButtonGoBack.setOnClickListener(new OnClickListener()
 		{
-
 			@Override
 			public void onClick(View arg0) {
 				finish();
 			}
-			
 		});
 		
-    
-	
-
-		
-     /**
-		this.imageButtonNext.setOnClickListener( new OnClickListener()
+		this.imageButtonNextGame.setOnClickListener( new OnClickListener()
 		{
 			
 			@Override
@@ -178,28 +157,12 @@ public class OmzettenActivity extends Activity
 				}
 			}
 			
-		});**/
-	
+		});
 	}
     
-    /**public static void shuffleList( List<Point> a )
-	{
-	    int n = a.size();
-	    Random random = new Random();
-	    random.nextInt();
-	    for (int i = 0; i < n; i++)
-	    {
-	    	int change = i + random.nextInt(n - i);
-	    	swap(a, i, change);
-	    }
-	}
-    
-	private static void swap(List<Point> a, int i, int change)
-	{
-		Point helper = a.get(i);
-	    a.set(i, a.get(change));
-	    a.set(change, helper);
-	}
-	**/
+    public void showImageButtonNextGame()
+    {
+    	this.imageButtonNextGame.setVisibility( 1 );
+    }
 	
 }

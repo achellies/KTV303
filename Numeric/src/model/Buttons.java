@@ -1,7 +1,6 @@
 package model;
 
 import com.ktv303.numeric.R;
-
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.Point;
@@ -9,31 +8,24 @@ import android.graphics.Typeface;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup.LayoutParams;
-import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-
-
-public class Buttons extends TextView{
+public class Buttons extends TextView {
+	public Buttons(Context context) {
+		super(context);
+		// TODO Auto-generated constructor stub
+	}
 	private ImageView imageViewOmzettenBackground;
-	private ImageView imageView1goed;
-	private ImageView imageView2goed;
-	private ImageView imageView3goed;
-	private ImageView imageView4goed;
-	private ImageView imageView1fout;
-	private ImageView imageView2fout;
-	private ImageView imageView3fout;
-	private ImageView imageView4fout;
 	
-
+	private ImageView imageViewGate1;
+	private ImageView imageViewGate2;
+	private ImageView imageViewGate3;
+	private ImageView imageViewGate4;
+	
 	private RelativeLayout.LayoutParams RLP;
-	private int startX;
-	private int startY;
 	private int id;
 	private RelativeLayout ButtonLayout;
 	private RelativeLayout RelativeLayout;
@@ -41,7 +33,7 @@ public class Buttons extends TextView{
 	
 
 	
-	
+	/*
 		public Buttons( int buttonId, Context content, Typeface font ){
 			super( content );
 			
@@ -345,9 +337,7 @@ public class Buttons extends TextView{
 				wrong(RelativeLayout);
 				Log.println(id, "yolo", String.valueOf(id));
 			}
-		}**/
-
-	
+		}**/	
 		
 }
 
