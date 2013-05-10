@@ -138,7 +138,7 @@ public class OmzettenActivity extends Activity
 			}
 		});
 		
-		this.imageButtonNextGame.setOnClickListener( new OnClickListener()
+		imageButtonNextGame.setOnClickListener( new OnClickListener()
 		{
 			
 			@Override
