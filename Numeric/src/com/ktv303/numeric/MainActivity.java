@@ -11,7 +11,9 @@ import android.content.Intent;
 
 public class MainActivity extends Activity
 {
+	// immageButtonMenuOmzetten
 	ImageButton imageButtonMenuOmzetten;
+	// imageButtonMenuOpVolgorde
 	ImageButton imageButtonMenuOpVolgorde;
 	
     @Override
@@ -25,12 +27,12 @@ public class MainActivity extends Activity
     
     public void addListenerOnButton()
     {
-    	 
+    	// find imageButtonMenuOmzetten
 		imageButtonMenuOmzetten = (ImageButton) findViewById( R.id.imageButtonMenuOmzetten );
- 
+		// set OnClickListener to imageButtonMenuOmzetten
 		imageButtonMenuOmzetten.setOnClickListener( new OnClickListener()
 		{
-			
+			// set OnClick that starts activity omzettenScreen
 			@Override
 			public void onClick( View arg0 )
 			{
@@ -43,10 +45,12 @@ public class MainActivity extends Activity
 			
 		});
 		
+		// find imageButtonMenuOpVolgorde
 		imageButtonMenuOpVolgorde = (ImageButton) findViewById( R.id.imageButtonMenuOpVolgorde );
-		
+		// set onClickListener to imageButtonMenuOpVolgorde
 		imageButtonMenuOpVolgorde.setOnClickListener( new OnClickListener()
 		{
+			// set OnClick that starts activity opVolgordeScreen
 			@Override
 			public void onClick( View arg0 )
 			{

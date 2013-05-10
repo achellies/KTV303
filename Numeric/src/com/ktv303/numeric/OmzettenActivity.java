@@ -53,8 +53,9 @@ public class OmzettenActivity extends Activity
         
         this.activity = this;
         
-        //  set imagebuttons
+        //  set ImageButtonGoBack
         this.imageButtonGoBack = (ImageButton) findViewById( R.id.imageButtonGoBack );
+        //  set ImageButtonNextGame
         this.imageButtonNextGame = (ImageButton) findViewById( R.id.imageButtonNextGame );
         
         //  get Extra's
@@ -63,7 +64,7 @@ public class OmzettenActivity extends Activity
         this.gameCount = bundle.getInt( "gameCount" ) + 1;
         this.combiAlreadyAnswered = bundle.getIntegerArrayList( "combiAlreadyAnswered" );
         
-        //  set gateid and gates array
+        //  set gateID and gates array
         this.gateID = 0;
         this.gates = new ArrayList<Gate>();
         
@@ -104,6 +105,7 @@ public class OmzettenActivity extends Activity
         this.gates.add( new Gate( 3, this, this.romansTypeFace, new Point( 446, 175 ), this.allCombinations.get( r ).getOption( 5 ), activity ) );
         this.gates.add( new Gate( 4, this, this.romansTypeFace, new Point( 641, 175 ), this.allCombinations.get( r ).getOption( 5 ), activity ) );
         
+        // create a question
         TextView txtViewQuestion = new TextView( this );
         txtViewQuestion.setText( this.allCombinations.get( r ).getOption( 4 ) + " = " );
         txtViewQuestion.setTypeface( this.romansTypeFace );
@@ -117,6 +119,7 @@ public class OmzettenActivity extends Activity
         this.gates.get( 2 ).setText( allCombinations.get( r ).getOption( 2 ) );
         this.gates.get( 3 ).setText( allCombinations.get( r ).getOption( 3 ) );
         
+        // put the newly create gates in the right view
         this.gateLayout.addView( txtViewQuestion );
         
         for( Gate gate : this.gates )
@@ -127,9 +130,10 @@ public class OmzettenActivity extends Activity
         
         addListenerOnButton();
     }
-    
+    // add listeners to buttons
     public void addListenerOnButton()
     { 
+    	// add click listener to back button
 		imageButtonGoBack.setOnClickListener(new OnClickListener()
 		{
 			@Override
@@ -138,6 +142,7 @@ public class OmzettenActivity extends Activity
 			}
 		});
 		
+		// add click listener to "next" button
 		imageButtonNextGame.setOnClickListener( new OnClickListener()
 		{
 			
@@ -160,6 +165,7 @@ public class OmzettenActivity extends Activity
 		});
 	}
     
+    // toggle visbility of ImageButtonNext on
     public void showImageButtonNextGame()
     {
     	this.imageButtonNextGame.setVisibility( 1 );
