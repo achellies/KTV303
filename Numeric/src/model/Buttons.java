@@ -50,7 +50,14 @@ public class Buttons extends TextView{
 			//  set text size
 			super.setTextSize( 80 );
 			//  set text color
+			TextView textviewclick = (TextView) findViewById( id );
+			
+			if(textviewclick.getText().toString().equals("…Èn = ") || textviewclick.getText().toString().equals("Twee = ") || textviewclick.getText().toString().equals("Veertien = ") || textviewclick.getText().toString().equals("Honderd = ") || textviewclick.getText().toString().equals("Negentig = ")) {
+			super.setTextColor( getResources().getColor( R.color.Black ) );
+			}
+			else{
 			super.setTextColor( getResources().getColor( R.color.White ) );
+			}
 			//  set background color
 			super.setBackgroundColor(Color.TRANSPARENT);
 			//  set height of number
