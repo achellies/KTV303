@@ -15,6 +15,8 @@ public class MainActivity extends Activity
 	ImageButton imageButtonMenuOmzetten;
 	// imageButtonMenuOpVolgorde
 	ImageButton imageButtonMenuOpVolgorde;
+	// imageButtonMenuLogin
+	ImageButton imageButtonMenuLogin;
 	
     @Override
     public void onCreate(Bundle savedInstanceState)
@@ -61,6 +63,22 @@ public class MainActivity extends Activity
 				startActivity( opVolgordeScreen );
 			}
 		});
+		
+		
+		// find imageButtonMenuLogin
+		imageButtonMenuLogin = (ImageButton) findViewById( R.id.imageButtonMenuLogin );
+		// set OnClickListener to imageButtonMenuLogin
+		imageButtonMenuLogin.setOnClickListener( new OnClickListener()
+				{
+					// set OnClick that starts activity omzettenScreen
+					@Override
+					public void onClick( View arg0 )
+					{
+						Intent loginScreen = new Intent( getApplicationContext(), LoginActivity.class );
+						startActivity( loginScreen );
+					}
+					
+				});
 		
 	}
     

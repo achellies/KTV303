@@ -36,4 +36,13 @@
             android:contentDescription="@string/desc_menu_button_opvolgorde"
             android:src="@drawable/menu_button_op_volgorde" />
 
+        <ImageButton
+            android:id="@+id/imageButtonMenuLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/imageButtonMenuOpVolgorde"
+            android:layout_alignParentTop="true"
+            android:contentDescription="@string/desc_menu_button_inloggen"
+            android:src="@drawable/menu_button_inloggen" />
+
     </RelativeLayout>
