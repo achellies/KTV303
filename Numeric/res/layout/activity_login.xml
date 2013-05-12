@@ -25,4 +25,41 @@
         android:contentDescription="@string/desc_button_go_back"
         android:src="@drawable/button_go_back" />
 
+    <EditText
+        android:id="@+id/textFieldWachtwoord"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/imageButtonGoBack"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="73dp"
+        android:background="#00000000"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:minHeight="50dp" />
+
+    <EditText
+        android:id="@+id/textFieldGebruikersnaam"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textFieldWachtwoord"
+        android:layout_alignLeft="@+id/textFieldWachtwoord"
+        android:layout_marginBottom="68dp"
+        android:background="#00000000"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:minHeight="50dp" >
+
+        <requestFocus />
+    </EditText>
+
+    <Button
+        android:id="@+id/buttonLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/imageViewLoginBackground"
+        android:layout_centerHorizontal="true"
+        android:background="#00000000"
+        android:minHeight="120dp"
+        android:minWidth="300dp" />
+
 </RelativeLayout>

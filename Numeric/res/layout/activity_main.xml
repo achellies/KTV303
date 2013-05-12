@@ -40,9 +40,12 @@
             android:id="@+id/imageButtonMenuLogin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/imageButtonMenuOpVolgorde"
             android:layout_alignParentTop="true"
+            android:layout_alignRight="@+id/imageButtonMenuOpVolgorde"
+            android:layout_marginRight="109dp"
+            android:background="#00000000"
             android:contentDescription="@string/desc_menu_button_inloggen"
-            android:src="@drawable/menu_button_inloggen" />
+            android:minHeight="100dp"
+            android:minWidth="300dp" />
 
     </RelativeLayout>

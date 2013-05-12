@@ -4,10 +4,12 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.Button;
 import android.widget.ImageButton;
 
 public class LoginActivity extends Activity {
 	private ImageButton imageButtonGoBack;
+	private Button buttonLogin;
 
 	public void onCreate(Bundle savedInstanceState)
     {
@@ -15,8 +17,11 @@ public class LoginActivity extends Activity {
         
         setContentView( R.layout.activity_login );
         
-        //  set ImageButtonGoBack
+        //  set imageButtonGoBack
         this.imageButtonGoBack = (ImageButton) findViewById( R.id.imageButtonGoBack );
+        //  set buttonLogin
+        this.buttonLogin = (Button) findViewById( R.id.buttonLogin );
+
         
         addListenerOnButton();
     }
@@ -30,6 +35,14 @@ public class LoginActivity extends Activity {
 			public void onClick(View arg0) {
 				finish();
 			}
+			});
+		// add click listener to login button
+		buttonLogin.setOnClickListener(new OnClickListener()
+			{
+			@Override
+			public void onClick(View arg0) {
+				finish();
+					}
 			});
 	}
 }
