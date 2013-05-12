@@ -42,7 +42,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_alignRight="@+id/imageButtonMenuOpVolgorde"
-            android:layout_marginRight="136dp"
+            android:layout_marginRight="124dp"
             android:background="#00000000"
             android:contentDescription="@string/desc_menu_button_inloggen"
             android:minHeight="100dp"
