@@ -14,7 +14,8 @@ import android.widget.RelativeLayout.LayoutParams;
 
 public class LoginActivity extends Activity {
 	private ImageButton imageButtonGoBack;
-	private ImageButton imageButtonRegisterScreen;
+	private Button 		buttonRegisterScreen;
+	private Button 		buttonLoginScreen;
 	private Button		buttonLogin;
 	private Button		buttonRegister;
 	private Typeface	romansTypeFace;
@@ -35,15 +36,20 @@ public class LoginActivity extends Activity {
         buttonLogin = (Button) findViewById( R.id.buttonLogin );
         //  set buttonRegister
         buttonRegister = (Button) findViewById( R.id.buttonRegister );
-        //  set imageButtonRegisterScreen
-        imageButtonRegisterScreen = (ImageButton) findViewById( R.id.imageButtonRegisterScreen );
+        //  set buttonRegisterScreen
+        buttonRegisterScreen = (Button) findViewById( R.id.buttonRegisterScreen );
+        //  set buttonLoginScreen
+        buttonLoginScreen = (Button) findViewById( R.id.buttonLoginScreen );
         
     	romansTypeFace = Typeface.createFromAsset( getAssets(), "fonts/font.ttf" );
 		buttonLogin.setTypeface(romansTypeFace, Typeface.BOLD);
 		buttonRegister.setTypeface(romansTypeFace, Typeface.BOLD);
+		buttonLoginScreen.setTypeface(romansTypeFace, Typeface.BOLD);
+		buttonRegisterScreen.setTypeface(romansTypeFace, Typeface.BOLD);
         
         // set txtViewRegister to invisible
 		buttonRegister.setVisibility(buttonRegister.GONE);
+		buttonLoginScreen.setVisibility(buttonLoginScreen.GONE);
         
         addListenerOnButton();
     }
@@ -75,12 +81,26 @@ public class LoginActivity extends Activity {
 					}
 			});
 		// add click listener to register screen button
-		imageButtonRegisterScreen.setOnClickListener(new OnClickListener()
+		buttonLoginScreen.setOnClickListener(new OnClickListener()
+			{
+			@Override
+			public void onClick(View arg0) {
+					buttonLogin.setVisibility(View.VISIBLE);
+					buttonRegister.setVisibility(View.GONE);
+					buttonLoginScreen.setVisibility(View.GONE);
+					buttonRegisterScreen.setVisibility(View.VISIBLE);
+					
+					}
+			});
+		// add click listener to register screen button
+		buttonRegisterScreen.setOnClickListener(new OnClickListener()
 			{
 			@Override
 			public void onClick(View arg0) {
 					buttonLogin.setVisibility(View.GONE);
 					buttonRegister.setVisibility(View.VISIBLE);
+					buttonLoginScreen.setVisibility(View.VISIBLE);
+					buttonRegisterScreen.setVisibility(View.GONE);
 					}
 			});
 
