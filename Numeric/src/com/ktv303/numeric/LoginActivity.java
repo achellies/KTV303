@@ -9,8 +9,9 @@ import android.widget.ImageButton;
 
 public class LoginActivity extends Activity {
 	private ImageButton imageButtonGoBack;
-	private Button buttonLogin;
-
+	private ImageButton imageButtonLogin;
+	private ImageButton imageButtonRegister;
+	private ImageButton imageButtonRegisterScreen;
 	public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
@@ -19,8 +20,12 @@ public class LoginActivity extends Activity {
         
         //  set imageButtonGoBack
         this.imageButtonGoBack = (ImageButton) findViewById( R.id.imageButtonGoBack );
-        //  set buttonLogin
-        this.buttonLogin = (Button) findViewById( R.id.buttonLogin );
+        //  set imageButtonLogin
+        this.imageButtonLogin = (ImageButton) findViewById( R.id.imageButtonLogin );
+        //  set imageButtonRegister
+        this.imageButtonRegister = (ImageButton) findViewById( R.id.imageButtonRegister );
+        //  set imageButtonRegisterScreen
+        this.imageButtonRegisterScreen = (ImageButton) findViewById( R.id.imageButtonRegisterScreen );
 
         
         addListenerOnButton();
@@ -37,12 +42,27 @@ public class LoginActivity extends Activity {
 			}
 			});
 		// add click listener to login button
-		buttonLogin.setOnClickListener(new OnClickListener()
+		imageButtonLogin.setOnClickListener(new OnClickListener()
 			{
 			@Override
 			public void onClick(View arg0) {
 				finish();
 					}
 			});
+		// add click listener to register button
+		imageButtonRegister.setOnClickListener(new OnClickListener()
+			{
+			@Override
+			public void onClick(View arg0) {
+					}
+			});
+		// add click listener to register screen button
+		imageButtonRegisterScreen.setOnClickListener(new OnClickListener()
+			{
+			@Override
+			public void onClick(View arg0) {
+					}
+			});
+
 	}
 }

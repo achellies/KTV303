@@ -13,6 +13,7 @@
     <string name="desc_button_start">start</string>
     <string name="desc_menu_button_inloggen">inloggen</string>
     <string name="desc_login_background">login background</string>
+    <string name="desc_button_registreren">registreren</string>
 
 
 </resources>
