@@ -25,6 +25,7 @@
         <activity android:name=".OmzettenActivity"></activity>
         <activity android:name=".OpVolgordeActivity"></activity>
         <activity android:name=".LoginActivity"></activity>
+        <activity android:name=".HighscoreActivity"></activity>
     </application>
 
 </manifest>

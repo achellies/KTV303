@@ -9,6 +9,7 @@ import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Typeface;
+import android.opengl.Visibility;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -86,7 +87,7 @@ public class LoginActivity extends Activity {
 		{
 			@Override
 			public void onClick(View arg0) {
-				progressDialog = ProgressDialog.show( LoginActivity.this, "", "Gegevens controleren.", true );
+				progressDialog = ProgressDialog.show( LoginActivity.this, "", "Gegevens controleren...", true );
                 new Thread(new Runnable() {
                 	public void run() {
                 		login();                          
@@ -98,17 +99,24 @@ public class LoginActivity extends Activity {
 		buttonRegister.setOnClickListener(new OnClickListener()
 		{
 			@Override
-			public void onClick(View arg0)
-			{
-				
+			public void onClick(View arg0) {
+				progressDialog = ProgressDialog.show( LoginActivity.this, "", "Account aanmaken...", true );
+                new Thread(new Runnable() {
+                	public void run() {
+                		register();                          
+                	}
+                }).start();
 			}
 		});
-		// add click listener to register screen button
+		// add click listener to login screen button
 		buttonLoginScreen.setOnClickListener(new OnClickListener()
 		{
 			@Override
 			public void onClick(View arg0) {
-				
+				buttonLogin.setVisibility(View.VISIBLE);
+				buttonRegister.setVisibility(View.GONE);
+				buttonRegisterScreen.setVisibility(View.VISIBLE);
+				buttonLoginScreen.setVisibility(View.GONE);
 			}
 		});
 		// add click listener to register screen button
@@ -116,7 +124,10 @@ public class LoginActivity extends Activity {
 		{
 			@Override
 			public void onClick(View arg0) {
-				
+				buttonLogin.setVisibility(View.GONE);
+				buttonRegister.setVisibility(View.VISIBLE);
+				buttonRegisterScreen.setVisibility(View.GONE);
+				buttonLoginScreen.setVisibility(View.VISIBLE);
 			}
 		});
 
@@ -183,4 +194,9 @@ public class LoginActivity extends Activity {
             }
         });
     }
+	
+	private void register()
+	{
+		progressDialog.dismiss();
+	}
 }

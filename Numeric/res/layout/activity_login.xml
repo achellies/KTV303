@@ -13,6 +13,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:contentDescription="@string/desc_menu_button_inloggen"
+        android:scaleType="fitXY"
         android:src="@drawable/inlogscherm_bg" />
 
     <ImageButton
@@ -49,33 +50,9 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:minHeight="50dp" >
-
+        
         <requestFocus />
     </EditText>
-
-    <Button
-        android:id="@+id/buttonRegister"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:text="Button" />
-
-    <Button
-        android:id="@+id/buttonRegisterScreen"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:text="Button" />
-
-    <Button
-        android:id="@+id/buttonLoginScreen"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:text="Button" />
 
     <Button
         android:id="@+id/buttonLogin"
@@ -88,7 +65,43 @@
         android:background="#00000000"
         android:text="Inloggen"
         android:textColor="@color/White"
-        android:textColorHint="@color/White"
         android:textSize="21sp" />
+
+    <Button
+        android:id="@+id/buttonRegister"
+        android:layout_width="180dp"
+        android:layout_height="80dp"
+        android:layout_alignBottom="@+id/imageViewLoginBackground"
+        android:layout_alignLeft="@+id/editTextPassword"
+        android:layout_marginBottom="30dp"
+        android:layout_marginLeft="80dp"
+        android:background="#00000000"
+        android:text="Registreer"
+        android:textColor="@color/White"
+        android:textSize="21sp"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/buttonRegisterScreen"
+        android:layout_width="200dp"
+        android:layout_height="80dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:background="#00000000"
+        android:textColor="@color/White"
+        android:textSize="21sp"
+        android:text="Registreren" />
+    
+    <Button
+        android:id="@+id/buttonLoginScreen"
+        android:layout_width="200dp"
+        android:layout_height="80dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:background="#00000000"
+        android:textColor="@color/White"
+        android:textSize="21sp"
+        android:text="Inloggen"
+        android:visibility="gone" />
 
 </RelativeLayout>
