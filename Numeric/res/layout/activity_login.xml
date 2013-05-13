@@ -27,7 +27,7 @@
         android:src="@drawable/button_go_back" />
 
     <EditText
-        android:id="@+id/textFieldWachtwoord"
+        android:id="@+id/editTextPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/imageButtonGoBack"
@@ -39,11 +39,11 @@
         android:minHeight="50dp" />
 
     <EditText
-        android:id="@+id/textFieldGebruikersnaam"
+        android:id="@+id/editTextUsername"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/textFieldWachtwoord"
-        android:layout_alignLeft="@+id/textFieldWachtwoord"
+        android:layout_above="@+id/editTextPassword"
+        android:layout_alignLeft="@+id/editTextPassword"
         android:layout_marginBottom="68dp"
         android:background="#00000000"
         android:ems="10"
@@ -54,41 +54,20 @@
     </EditText>
 
     <Button
-        android:id="@+id/buttonLogin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="520dp"
-        android:layout_marginTop="510dp"
-        android:background="#00000000"
-        android:text="Inloggen"
-        android:textColor="@color/White"
-        android:textColorHint="@color/White"
-        android:textSize="21sp" />
-
-    <Button
         android:id="@+id/buttonRegister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="500dp"
-        android:layout_marginTop="510dp"
-        android:background="#00000000"
-        android:text="Registreren"
-        android:textColor="@color/White"
-        android:textColorHint="@color/White"
-        android:textSize="21sp" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:text="Button" />
 
     <Button
         android:id="@+id/buttonRegisterScreen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="25dp"
-        android:layout_marginTop="540dp"
-        android:background="#00000000"
-        android:text="Registreren"
-        android:textColor="@color/White"
-        android:textColorHint="@color/White"
-        android:textSize="21sp" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:text="Button" />
 
     <Button
         android:id="@+id/buttonLoginScreen"
@@ -96,8 +75,16 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="890dp"
-        android:layout_marginTop="540dp"
+        android:text="Button" />
+
+    <Button
+        android:id="@+id/buttonLogin"
+        android:layout_width="180dp"
+        android:layout_height="80dp"
+        android:layout_alignBottom="@+id/imageViewLoginBackground"
+        android:layout_alignLeft="@+id/editTextPassword"
+        android:layout_marginBottom="30dp"
+        android:layout_marginLeft="80dp"
         android:background="#00000000"
         android:text="Inloggen"
         android:textColor="@color/White"
