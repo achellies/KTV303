@@ -21,6 +21,8 @@ public class MainActivity extends Activity
 	private ImageButton imageButtonMenuLogin;
 	// imageButtonMenuLogoff
 	private ImageButton imageButtonMenuLogoff;
+	// imageButtonMenuHigscore
+	private ImageButton imageButtonMenuHighscore;
 	//  TextView textViewHighScore
 	private TextView textViewHighScore;
 	//  userFunctions
@@ -45,6 +47,8 @@ public class MainActivity extends Activity
      	this.imageButtonMenuLogin = (ImageButton) findViewById( R.id.imageButtonMenuLogin );
      	// find imageButtonMenuLogoff
      	this.imageButtonMenuLogoff = (ImageButton) findViewById( R.id.imageButtonMenuLogoff );
+     	// find imageButtonMenuHighscore
+     	this.imageButtonMenuHighscore = (ImageButton) findViewById( R.id.imageButtonMenuHighscore );
      	// find textViewHighScore
      	this.textViewHighScore = (TextView) findViewById( R.id.textViewHighScore );
         
@@ -118,6 +122,21 @@ public class MainActivity extends Activity
 			{
 				userFunctions.logoutUser( getApplicationContext() );
 				startActivity( MainActivity.this.getIntent() );
+				finish();
+			}
+			
+		});
+		
+		// set OnClickListener to imageButtonMenuLogoff
+		imageButtonMenuHighscore.setOnClickListener( new OnClickListener()
+		{
+			// set OnClick that starts activity omzettenScreen
+			@Override
+			public void onClick( View arg0 )
+			{
+				Intent highscoreScreen = new Intent( getApplicationContext(), HighscoreActivity.class );
+				highscoreScreen.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+				startActivity( highscoreScreen );
 				finish();
 			}
 			

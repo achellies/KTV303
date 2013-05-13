@@ -36,13 +36,35 @@
             android:contentDescription="@string/desc_menu_button_opvolgorde"
             android:src="@drawable/menu_button_op_volgorde" />
 
+        <TextView
+            android:id="@+id/textViewHighScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:textColor="@color/Black"
+            android:textSize="24sp" />
+
+        <ImageButton
+            android:id="@+id/imageButtonMenuHighscore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignRight="@+id/imageButtonMenuOpVolgorde"
+            android:layout_marginRight="125dp"
+            android:layout_marginTop="71dp"
+            android:background="@drawable/menu_button_highscores"
+            android:src="@drawable/menu_button_highscores"
+            android:contentDescription="@string/desc_menu_button_inloggen"/>
+
         <ImageButton
             android:id="@+id/imageButtonMenuLogin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:layout_alignRight="@+id/imageButtonMenuOpVolgorde"
-            android:layout_marginRight="124dp"
+            android:layout_alignRight="@+id/imageButtonMenuHighscore"
+            android:layout_marginRight="-10dp"
             android:background="#00000000"
             android:contentDescription="@string/desc_menu_button_inloggen"
             android:minHeight="100dp"
@@ -54,23 +76,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:layout_alignRight="@+id/imageButtonMenuOpVolgorde"
-            android:layout_marginRight="124dp"
+            android:layout_alignRight="@+id/imageButtonMenuHighscore"
+            android:layout_marginRight="-10dp"
             android:background="#00000000"
             android:contentDescription="@string/desc_menu_button_inloggen"
             android:minHeight="100dp"
             android:minWidth="300dp"
             android:src="@drawable/menu_button_uitloggen"
             android:visibility="gone" />
-
-        <TextView
-            android:id="@+id/textViewHighScore"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:gravity="center"
-            android:textColor="@color/Black"
-            android:textSize="24sp" />
 
     </RelativeLayout>

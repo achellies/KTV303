@@ -14,11 +14,11 @@ public class UserFunctions {
 	
 	private JSONParser jsonParser;
 	
-	private static String loginURL = "http://ktv303.ddict.nl/api/";
-	private static String registerURL = "http://ktv303.ddict.nl/api/";
+	private static String URL = "http://ktv303.ddict.nl/api/";
 	
 	private static String login_tag = "login";
 	private static String register_tag = "register";
+	private static String highscoreboard_tag = "highscoreboard";
 	
 	// constructor
 	public UserFunctions(){
@@ -36,9 +36,8 @@ public class UserFunctions {
 		params.add(new BasicNameValuePair("tag", login_tag));
 		params.add(new BasicNameValuePair("username", username));
 		params.add(new BasicNameValuePair("password", password));
-		JSONObject json = jsonParser.getJSONFromUrl(loginURL, params);
+		JSONObject json = jsonParser.getJSONFromUrl( URL, params );
 		// return json
-		Log.e("JSON", json.toString());
 		return json;
 	}
 	
@@ -55,7 +54,7 @@ public class UserFunctions {
 		params.add(new BasicNameValuePair("password", password));
 		
 		// getting JSON Object
-		JSONObject json = jsonParser.getJSONFromUrl(registerURL, params);
+		JSONObject json = jsonParser.getJSONFromUrl( URL, params);
 		// return json
 		return json;
 	}
@@ -83,10 +82,27 @@ public class UserFunctions {
 		return true;
 	}
 	
+	/**
+	 * Function get User Highscore
+	 * @param context
+	 * @return int highscore of user
+	 */
 	public int getUserHighScore(Context context)
 	{
 		DatabaseHandler db = new DatabaseHandler(context);
 		return Integer.parseInt( db.getUserDetails().get("highscore") );
+	}
+	
+	
+	public JSONObject getHighscoreBoard() {
+		//  Building parameters
+		List<NameValuePair> params = new ArrayList<NameValuePair>();
+		params.add( new BasicNameValuePair("tag", highscoreboard_tag) );
+		
+		//  getting JSON Object
+		JSONObject json = jsonParser.getJSONFromUrl( URL, params );
+		//return json
+		return json;
 	}
 	
 }

@@ -173,6 +173,12 @@ public class OmzettenActivity extends Activity
 					reloadI.putExtra( "gameCount", gameCount );
 					reloadI.putIntegerArrayListExtra( "combiAlreadyAnswered", combiAlreadyAnswered );
 					startActivity( getIntent() );
+				} else {
+					//  add 7 points to score
+					if(userFunctions.isUserLoggedIn(getApplicationContext()))
+					{
+						userFunctions.addScore(7);
+					}
 				}
 			}
 			
