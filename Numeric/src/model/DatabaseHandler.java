@@ -15,16 +15,17 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 	private static final int DATABASE_VERSION = 1;
 
 	// Database Name
-	private static final String DATABASE_NAME = "android_apii";
+	private static final String DATABASE_NAME = "numeric";
 
 	// Login table name
-	private static final String TABLE_LOGIN = "login";
+	private static final String TABLE_LOGIN = "user";
 
 	// Login Table Columns names
 	private static final String KEY_ID = "id";
 	private static final String KEY_USERNAME = "username";
 	private static final String KEY_UID = "uid";
 	private static final String KEY_CREATED_AT = "created_at";
+	private static final String KEY_HIGHSCORE = "highscore";
 
 	public DatabaseHandler(Context context) {
 		super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -37,7 +38,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 				+ KEY_ID + " INTEGER PRIMARY KEY," 
 				+ KEY_USERNAME + " TEXT,"
 				+ KEY_UID + " TEXT,"
-				+ KEY_CREATED_AT + " TEXT" + ")";
+				+ KEY_CREATED_AT + " TEXT,"
+				+ KEY_HIGHSCORE + " TEXT"+ ")";
 		db.execSQL(CREATE_LOGIN_TABLE);
 	}
 
@@ -54,13 +56,14 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 	/**
 	 * Storing user details in database
 	 * */
-	public void addUser(String username, String uid, String created_at) {
+	public void addUser(String username, String uid, String created_at, String highscore) {
 		SQLiteDatabase db = this.getWritableDatabase();
 
 		ContentValues values = new ContentValues();
 		values.put(KEY_USERNAME, username); // username
 		values.put(KEY_UID, uid); // ID
 		values.put(KEY_CREATED_AT, created_at); // Created At
+		values.put(KEY_HIGHSCORE, highscore); // Highscore
 
 		// Inserting Row
 		db.insert(TABLE_LOGIN, null, values);
@@ -82,6 +85,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         	user.put("username", cursor.getString(1));
         	user.put("uid", cursor.getString(2));
         	user.put("created_at", cursor.getString(3));
+        	user.put("highscore", cursor.getString(4));
         }
         cursor.close();
         db.close();

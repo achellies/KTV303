@@ -83,4 +83,10 @@ public class UserFunctions {
 		return true;
 	}
 	
+	public int getUserHighScore(Context context)
+	{
+		DatabaseHandler db = new DatabaseHandler(context);
+		return Integer.parseInt( db.getUserDetails().get("highscore") );
+	}
+	
 }

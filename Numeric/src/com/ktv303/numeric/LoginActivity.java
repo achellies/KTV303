@@ -36,11 +36,11 @@ public class LoginActivity extends Activity {
 	
 	// JSON Response node names
 	private static String KEY_SUCCESS = "success";
-	private static String KEY_ERROR = "error";
 	private static String KEY_ERROR_MSG = "error_msg";
 	private static String KEY_UID = "uid";
 	private static String KEY_USERNAME = "username";
 	private static String KEY_CREATED_AT = "created_at";
+	private static String KEY_HIGHSCORE = "highscore";
 	
 	public void onCreate(Bundle savedInstanceState)
     {
@@ -79,6 +79,8 @@ public class LoginActivity extends Activity {
 			{
 			@Override
 			public void onClick(View arg0) {
+				Intent i = new Intent( getApplicationContext(), MainActivity.class );
+				startActivity(i);
 				finish();
 			}
 			});
@@ -154,7 +156,7 @@ public class LoginActivity extends Activity {
 					
 					// Clear all previous data in database
 					userFunction.logoutUser(getApplicationContext());
-					db.addUser(json_user.getString(KEY_USERNAME), json.getString(KEY_UID), json_user.getString(KEY_CREATED_AT));						
+					db.addUser(json_user.getString(KEY_USERNAME), json.getString(KEY_UID), json_user.getString(KEY_CREATED_AT), json_user.getString(KEY_HIGHSCORE));						
 					
 					// Launch Dashboard Screen
 					//Intent dashboard = new Intent(getApplicationContext(), DashboardActivity.class);
@@ -164,6 +166,8 @@ public class LoginActivity extends Activity {
 					//startActivity(dashboard);
 					
 					// Close Login Screen
+					Intent i = new Intent( getApplicationContext(), MainActivity.class );
+					startActivity(i);
 					finish();
 				}else{
 					// Error in login
@@ -196,13 +200,15 @@ public class LoginActivity extends Activity {
 					
 					// Clear all previous data in database
 					userFunction.logoutUser(getApplicationContext());
-					db.addUser(json_user.getString(KEY_USERNAME), json.getString(KEY_UID), json_user.getString(KEY_CREATED_AT));						
+					db.addUser(json_user.getString(KEY_USERNAME), json.getString(KEY_UID), json_user.getString(KEY_CREATED_AT), json_user.getString(KEY_HIGHSCORE));						
 					// Launch Dashboard Screen
 					//Intent dashboard = new Intent(getApplicationContext(), DashboardActivity.class);
 					// Close all views before launching Dashboard
 					//dashboard.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 					//startActivity(dashboard);
 					// Close Registration Screen
+					Intent i = new Intent( getApplicationContext(), MainActivity.class );
+					startActivity(i);
 					finish();
 				}else{
 					// Error in registration

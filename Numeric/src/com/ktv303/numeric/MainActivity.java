@@ -6,17 +6,27 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.app.Activity;
 import android.content.Intent;
+import model.UserFunctions;
 
 public class MainActivity extends Activity
 {
 	// immageButtonMenuOmzetten
-	ImageButton imageButtonMenuOmzetten;
+	private ImageButton imageButtonMenuOmzetten;
 	// imageButtonMenuOpVolgorde
-	ImageButton imageButtonMenuOpVolgorde;
+	private ImageButton imageButtonMenuOpVolgorde;
 	// imageButtonMenuLogin
-	ImageButton imageButtonMenuLogin;
+	private ImageButton imageButtonMenuLogin;
+	// imageButtonMenuLogoff
+	private ImageButton imageButtonMenuLogoff;
+	//  TextView textViewHighScore
+	private TextView textViewHighScore;
+	//  userFunctions
+	private UserFunctions userFunctions;
+	//  int highScore
+	private int highScore;
 	
     @Override
     public void onCreate(Bundle savedInstanceState)
@@ -24,13 +34,33 @@ public class MainActivity extends Activity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         
+        this.userFunctions = new UserFunctions();
+        //this.userFunctions.logoutUser( getApplicationContext() );
+        
+        // find imageButtonMenuOmzetten
+        this.imageButtonMenuOmzetten = (ImageButton) findViewById( R.id.imageButtonMenuOmzetten );
+        // find imageButtonMenuOpVolgorde
+     	this.imageButtonMenuOpVolgorde = (ImageButton) findViewById( R.id.imageButtonMenuOpVolgorde );
+     	// find imageButtonMenuLogin
+     	this.imageButtonMenuLogin = (ImageButton) findViewById( R.id.imageButtonMenuLogin );
+     	// find imageButtonMenuLogoff
+     	this.imageButtonMenuLogoff = (ImageButton) findViewById( R.id.imageButtonMenuLogoff );
+     	// find textViewHighScore
+     	this.textViewHighScore = (TextView) findViewById( R.id.textViewHighScore );
+        
+        if( this.userFunctions.isUserLoggedIn( getApplicationContext() ) )
+        {
+        	this.highScore = this.userFunctions.getUserHighScore( getApplicationContext() );
+        	this.textViewHighScore.setText( "Highscore\n" + String.valueOf( this.highScore ) );
+        	this.imageButtonMenuLogoff.setVisibility(View.VISIBLE);
+        	this.imageButtonMenuLogin.setVisibility(View.GONE);
+        }
+        
         addListenerOnButton();
     }
     
     public void addListenerOnButton()
     {
-    	// find imageButtonMenuOmzetten
-		imageButtonMenuOmzetten = (ImageButton) findViewById( R.id.imageButtonMenuOmzetten );
 		// set OnClickListener to imageButtonMenuOmzetten
 		imageButtonMenuOmzetten.setOnClickListener( new OnClickListener()
 		{
@@ -39,16 +69,15 @@ public class MainActivity extends Activity
 			public void onClick( View arg0 )
 			{
 				Intent omzettenScreen = new Intent( getApplicationContext(), OmzettenActivity.class );
-				omzettenScreen.putExtra( "highscore", 0 );
 				omzettenScreen.putExtra( "gameCount", 0 );
 				omzettenScreen.putIntegerArrayListExtra( "combiAlreadyAnswered", new ArrayList<Integer>()  );
+				omzettenScreen.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 				startActivity( omzettenScreen );
+				finish();
 			}
 			
 		});
 		
-		// find imageButtonMenuOpVolgorde
-		imageButtonMenuOpVolgorde = (ImageButton) findViewById( R.id.imageButtonMenuOpVolgorde );
 		// set onClickListener to imageButtonMenuOpVolgorde
 		imageButtonMenuOpVolgorde.setOnClickListener( new OnClickListener()
 		{
@@ -57,28 +86,42 @@ public class MainActivity extends Activity
 			public void onClick( View arg0 )
 			{
 				Intent opVolgordeScreen = new Intent( getApplicationContext(), OpVolgordeActivity.class );
-				opVolgordeScreen.putExtra( "highscore", 0 );
 				opVolgordeScreen.putExtra( "gameCount", 0 );
 				opVolgordeScreen.putIntegerArrayListExtra( "combiAlreadyAnswered", new ArrayList<Integer>()  );
+				opVolgordeScreen.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 				startActivity( opVolgordeScreen );
+				finish();
 			}
 		});
 		
-		
-		// find imageButtonMenuLogin
-		imageButtonMenuLogin = (ImageButton) findViewById( R.id.imageButtonMenuLogin );
 		// set OnClickListener to imageButtonMenuLogin
 		imageButtonMenuLogin.setOnClickListener( new OnClickListener()
-				{
-					// set OnClick that starts activity omzettenScreen
-					@Override
-					public void onClick( View arg0 )
-					{
-						Intent loginScreen = new Intent( getApplicationContext(), LoginActivity.class );
-						startActivity( loginScreen );
-					}
-					
-				});
+		{
+			// set OnClick that starts activity omzettenScreen
+			@Override
+			public void onClick( View arg0 )
+			{
+				Intent loginScreen = new Intent( getApplicationContext(), LoginActivity.class );
+				loginScreen.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+				startActivity( loginScreen );
+				finish();
+			}
+			
+		});
+		
+		// set OnClickListener to imageButtonMenuLogoff
+		imageButtonMenuLogoff.setOnClickListener( new OnClickListener()
+		{
+			// set OnClick that starts activity omzettenScreen
+			@Override
+			public void onClick( View arg0 )
+			{
+				userFunctions.logoutUser( getApplicationContext() );
+				startActivity( MainActivity.this.getIntent() );
+				finish();
+			}
+			
+		});
 		
 	}
     

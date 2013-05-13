@@ -6,6 +6,7 @@ import java.util.Random;
 
 import model.Combination;
 import model.Gate;
+import model.UserFunctions;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Point;
@@ -30,7 +31,7 @@ public class OmzettenActivity extends Activity
 	//  int gateID
 	private int gateID;
 	//  int highscore
-	private int highscore;
+	private int highScore;
 	//  int gameCount
 	private int gameCount;
 	//  int[] combiAlreadyAnswered
@@ -43,6 +44,10 @@ public class OmzettenActivity extends Activity
 	private RelativeLayout gateLayout;
 	//  OmzettenActivity activity
 	private OmzettenActivity activity;
+	//  UserFunctions userFunctions;
+	private UserFunctions userFunctions;
+	//  TextView textViewHighScore
+	private TextView textViewHighScore;
 	
     @Override
     public void onCreate(Bundle savedInstanceState)
@@ -52,17 +57,25 @@ public class OmzettenActivity extends Activity
         setContentView( R.layout.activity_omzetten );
         
         this.activity = this;
+        this.userFunctions = new UserFunctions();
         
         //  set ImageButtonGoBack
         this.imageButtonGoBack = (ImageButton) findViewById( R.id.imageButtonGoBack );
         //  set ImageButtonNextGame
         this.imageButtonNextGame = (ImageButton) findViewById( R.id.imageButtonNextGame );
+        //  set textViewHighScore
+        this.textViewHighScore = (TextView) findViewById( R.id.textViewHighScoreOmzetten );
         
         //  get Extra's
         Bundle bundle = getIntent().getExtras();
-        this.highscore = bundle.getInt( "highscore" );
         this.gameCount = bundle.getInt( "gameCount" ) + 1;
         this.combiAlreadyAnswered = bundle.getIntegerArrayList( "combiAlreadyAnswered" );
+        
+        if( this.userFunctions.isUserLoggedIn( getApplicationContext() ) )
+        {
+        	this.highScore = this.userFunctions.getUserHighScore( getApplicationContext() );
+        	this.textViewHighScore.setText( "Highscore: " + String.valueOf( this.highScore ) );
+        }
         
         //  set gateID and gates array
         this.gateID = 0;
@@ -138,6 +151,8 @@ public class OmzettenActivity extends Activity
 		{
 			@Override
 			public void onClick(View arg0) {
+				Intent i = new Intent( getApplicationContext(), MainActivity.class );
+				startActivity(i);
 				finish();
 			}
 		});
@@ -155,7 +170,6 @@ public class OmzettenActivity extends Activity
 				{
 					//  start the activity again
 					Intent reloadI = getIntent();
-					reloadI.putExtra( "highscore", highscore );
 					reloadI.putExtra( "gameCount", gameCount );
 					reloadI.putIntegerArrayListExtra( "combiAlreadyAnswered", combiAlreadyAnswered );
 					startActivity( getIntent() );

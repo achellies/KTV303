@@ -16,8 +16,10 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageButton;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import model.Combination;
 import model.Number;
+import model.UserFunctions;
 
 public class OpVolgordeActivity extends Activity
 {
@@ -30,7 +32,7 @@ public class OpVolgordeActivity extends Activity
 	//  int numberID
 	private int numberID;
 	//  int highscore
-	private int highscore;
+	private int highScore;
 	//  int gameCount
 	private int gameCount;
 	//  int[] combiAlreadyAnswered
@@ -45,6 +47,10 @@ public class OpVolgordeActivity extends Activity
 	private List<Point> goodPoints;
 	//  List allCombinations
 	private List<Combination> allCombinations;
+	//  UserFunctions userFunctions;
+	private UserFunctions userFunctions;
+	//  TextView textViewHighScore
+	private TextView textViewHighScore;
 	
 	@Override
     public void onCreate(Bundle savedInstanceState)
@@ -54,16 +60,24 @@ public class OpVolgordeActivity extends Activity
         //  set op_volgorde screen content
         setContentView( R.layout.activity_op_volgorde );
         
+        this.userFunctions = new UserFunctions();
+        
         //  set imagebuttons
         this.imageButtonGoBack = (ImageButton) findViewById( R.id.imageButtonGoBack );
         this.imageButtonNext = (ImageButton) findViewById( R.id.imageButtonNext );
+        //  set TextViews
+        this.textViewHighScore = (TextView) findViewById( R.id.textViewHighScoreOpVolgorde );
         
         //  get Extra's
         Bundle bundle = getIntent().getExtras();
-        this.highscore = bundle.getInt( "highscore" );
         this.gameCount = bundle.getInt( "gameCount" ) + 1;
         this.combiAlreadyAnswered = bundle.getIntegerArrayList( "combiAlreadyAnswered" );
         
+        if( this.userFunctions.isUserLoggedIn( getApplicationContext() ) )
+        {
+        	this.highScore = this.userFunctions.getUserHighScore( getApplicationContext() );
+        	this.textViewHighScore.setText( "Highscore: " + String.valueOf( this.highScore ) );
+        }
         
         //  set numberid and numbers array
         this.numberID = 0;
@@ -147,7 +161,8 @@ public class OpVolgordeActivity extends Activity
 			public void onClick( View arg0 )
 			{
 				//  finish the activity
-				finish();
+				Intent i = new Intent( getApplicationContext(), MainActivity.class );
+				startActivity(i);
 			}
 			
 		});
@@ -165,7 +180,6 @@ public class OpVolgordeActivity extends Activity
 				{
 					//  start the activity again
 					Intent reloadI = getIntent();
-					reloadI.putExtra( "highscore", highscore );
 					reloadI.putExtra( "gameCount", gameCount );
 					reloadI.putIntegerArrayListExtra( "combiAlreadyAnswered", combiAlreadyAnswered );
 					startActivity( getIntent() );
