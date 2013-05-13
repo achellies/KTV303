@@ -167,7 +167,7 @@ public class LoginActivity extends Activity {
 					finish();
 				}else{
 					// Error in login
-					this.errorMessage = "Onjuiste gegevens";
+					this.errorMessage = json.getString( KEY_ERROR_MSG );
 					showAlert();
 				}
 			}
@@ -177,6 +177,46 @@ public class LoginActivity extends Activity {
 		}
 	}
 	
+	private void register()
+	{
+		String username = this.editTextUsername.getText().toString();
+		String password = this.editTextPassword.getText().toString();
+		UserFunctions userFunction = new UserFunctions();
+		JSONObject json = userFunction.registerUser( username, password );
+		
+		try {
+			if (json.getString(KEY_SUCCESS) != null) {
+				
+				String res = json.getString(KEY_SUCCESS); 
+				if(Integer.parseInt(res) == 1){
+					// user successfully registred
+					// Store user details in SQLite Database
+					DatabaseHandler db = new DatabaseHandler(getApplicationContext());
+					JSONObject json_user = json.getJSONObject("user");
+					
+					// Clear all previous data in database
+					userFunction.logoutUser(getApplicationContext());
+					db.addUser(json_user.getString(KEY_USERNAME), json.getString(KEY_UID), json_user.getString(KEY_CREATED_AT));						
+					// Launch Dashboard Screen
+					//Intent dashboard = new Intent(getApplicationContext(), DashboardActivity.class);
+					// Close all views before launching Dashboard
+					//dashboard.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+					//startActivity(dashboard);
+					// Close Registration Screen
+					finish();
+				}else{
+					// Error in registration
+					this.errorMessage = json.getString( KEY_ERROR_MSG );
+					showAlert();
+				}
+			}
+		} catch (JSONException e) {
+			this.progressDialog.dismiss();
+           	Log.v( "Exception", e.getMessage() );
+		}
+	}
+	
+
 	private void showAlert(){
         LoginActivity.this.runOnUiThread(new Runnable() {
             public void run() {
@@ -194,9 +234,4 @@ public class LoginActivity extends Activity {
             }
         });
     }
-	
-	private void register()
-	{
-		progressDialog.dismiss();
-	}
 }
