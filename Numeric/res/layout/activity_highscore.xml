@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <ImageButton
+        android:id="@+id/imageButtonGoBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="40dp"
+        android:background="@drawable/button_go_back"
+        android:contentDescription="@string/desc_button_go_back"
+        android:src="@drawable/button_go_back" />
+
+    <ImageView
+        android:id="@+id/imageViewHighscoreBackground"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:contenctDescription="@string/desc_menu_button_highscores"
+        android:contentDescription="@string/desc_menu_button_highscores"
+        android:src="@drawable/highscore_bg" />
+    
+</RelativeLayout>
