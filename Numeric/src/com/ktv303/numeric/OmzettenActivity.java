@@ -164,8 +164,6 @@ public class OmzettenActivity extends Activity
 			@Override
 			public void onClick( View arg0 )
 			{
-				//  finish the activity
-				finish();
 				if( gameCount < 5 )
 				{
 					//  start the activity again
@@ -177,9 +175,17 @@ public class OmzettenActivity extends Activity
 					//  add 7 points to score
 					if(userFunctions.isUserLoggedIn(getApplicationContext()))
 					{
-						userFunctions.addScore(7);
+						new Thread(new Runnable() {
+				        	public void run() {
+				        		userFunctions.addScore( getApplicationContext(), 7 );
+				        	}
+						});
 					}
+					Intent i = new Intent( getApplicationContext(), MainActivity.class );
+					startActivity(i);
 				}
+				//  finish the activity
+				finish();
 			}
 			
 		});

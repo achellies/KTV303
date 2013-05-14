@@ -19,6 +19,7 @@ public class UserFunctions {
 	private static String login_tag = "login";
 	private static String register_tag = "register";
 	private static String highscoreboard_tag = "highscoreboard";
+	private static String addscore_tag = "addScore";
 	
 	// constructor
 	public UserFunctions(){
@@ -98,6 +99,22 @@ public class UserFunctions {
 		//  Building parameters
 		List<NameValuePair> params = new ArrayList<NameValuePair>();
 		params.add( new BasicNameValuePair("tag", highscoreboard_tag) );
+		
+		//  getting JSON Object
+		JSONObject json = jsonParser.getJSONFromUrl( URL, params );
+		//return json
+		return json;
+	}
+	
+	public JSONObject addScore( Context context, int size )
+	{
+		DatabaseHandler db = new DatabaseHandler(context);
+		
+		//  Building parameters
+		List<NameValuePair> params = new ArrayList<NameValuePair>();
+		params.add( new BasicNameValuePair( "tag", addscore_tag) );
+		params.add( new BasicNameValuePair( "size", String.valueOf( size ) ) );
+		params.add( new BasicNameValuePair( "uid", db.getUserDetails().get("uid")) );
 		
 		//  getting JSON Object
 		JSONObject json = jsonParser.getJSONFromUrl( URL, params );
