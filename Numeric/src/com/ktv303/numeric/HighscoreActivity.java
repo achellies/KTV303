@@ -100,6 +100,7 @@ public class HighscoreActivity extends Activity
         				if( Integer.parseInt(res) == 1 )
         				{
         					JSONObject highscore = new JSONObject( json.getJSONObject("highscore").toString() );
+        					
         					for( int i = 0; i < highscore.length(); i++ )
         					{
         						wait = true;

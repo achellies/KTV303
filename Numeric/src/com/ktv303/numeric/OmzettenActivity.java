@@ -173,14 +173,14 @@ public class OmzettenActivity extends Activity
 					startActivity( getIntent() );
 				} else {
 					//  add 7 points to score
-					if(userFunctions.isUserLoggedIn(getApplicationContext()))
+					/*if(userFunctions.isUserLoggedIn(getApplicationContext()))
 					{
 						new Thread(new Runnable() {
 				        	public void run() {
 				        		userFunctions.addScore( getApplicationContext(), 7 );
 				        	}
 						});
-					}
+					}*/
 					Intent i = new Intent( getApplicationContext(), MainActivity.class );
 					startActivity(i);
 				}

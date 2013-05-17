@@ -121,7 +121,9 @@ public class MainActivity extends Activity
 			public void onClick( View arg0 )
 			{
 				userFunctions.logoutUser( getApplicationContext() );
-				startActivity( MainActivity.this.getIntent() );
+				Intent mainScreen = new Intent( getApplicationContext(), MainActivity.class );
+				mainScreen.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+				startActivity( mainScreen );
 				finish();
 			}
 			

@@ -174,8 +174,6 @@ public class OpVolgordeActivity extends Activity
 			@Override
 			public void onClick( View arg0 )
 			{
-				//  finish the activity
-				finish();
 				if( gameCount < 5 )
 				{
 					//  start the activity again
@@ -183,7 +181,11 @@ public class OpVolgordeActivity extends Activity
 					reloadI.putExtra( "gameCount", gameCount );
 					reloadI.putIntegerArrayListExtra( "combiAlreadyAnswered", combiAlreadyAnswered );
 					startActivity( getIntent() );
+				} else {
+					Intent i = new Intent( getApplicationContext(), MainActivity.class );
+					startActivity(i);
 				}
+				finish();
 			}
 			
 		});

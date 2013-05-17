@@ -63,6 +63,7 @@ public class LoginActivity extends Activity {
         //  set editTextPassword
         this.editTextPassword = (EditText) findViewById( R.id.editTextPassword );
         
+        
     	romansTypeFace = Typeface.createFromAsset( getAssets(), "fonts/font.ttf" );
 		buttonLogin.setTypeface(romansTypeFace, Typeface.BOLD);
 		buttonRegister.setTypeface(romansTypeFace, Typeface.BOLD);
