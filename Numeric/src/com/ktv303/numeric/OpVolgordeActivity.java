@@ -67,6 +67,8 @@ public class OpVolgordeActivity extends Activity
         //  set op_volgorde screen content
         setContentView( R.layout.activity_op_volgorde );
         
+        this.activity = this;
+
         this.userFunctions = new UserFunctions();
         
         //  set imagebuttons
