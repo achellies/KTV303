@@ -6,14 +6,17 @@ import java.util.List;
 import java.util.Random;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.graphics.Point;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -27,6 +30,8 @@ public class OpVolgordeActivity extends Activity
 	private ImageButton imageButtonGoBack;
 	//  ImageButton imageButtonNext
 	private ImageButton imageButtonNext;
+	// 	ImageButton imageButtonHint
+	private Button buttonHint;
 	//  List Number numbers
 	private List<Number> numbers;
 	//  int numberID
@@ -51,6 +56,8 @@ public class OpVolgordeActivity extends Activity
 	private UserFunctions userFunctions;
 	//  TextView textViewHighScore
 	private TextView textViewHighScore;
+	// set Activity
+	private OpVolgordeActivity activity;
 	
 	@Override
     public void onCreate(Bundle savedInstanceState)
@@ -65,6 +72,7 @@ public class OpVolgordeActivity extends Activity
         //  set imagebuttons
         this.imageButtonGoBack = (ImageButton) findViewById( R.id.imageButtonGoBack );
         this.imageButtonNext = (ImageButton) findViewById( R.id.imageButtonNext );
+        this.buttonHint = (Button) findViewById( R.id.buttonHint );
         //  set TextViews
         this.textViewHighScore = (TextView) findViewById( R.id.textViewHighScoreOpVolgorde );
         
@@ -186,6 +194,20 @@ public class OpVolgordeActivity extends Activity
 					startActivity(i);
 				}
 				finish();
+			}
+			
+		});
+		
+		buttonHint.setOnClickListener( new OnClickListener(){
+			
+			public void onClick( View arg0 )
+			{
+				AlertDialog.Builder builder = new AlertDialog.Builder(activity);
+			    LayoutInflater inflater = activity.getLayoutInflater();
+		        builder.setView(inflater.inflate(R.layout.hintslayout, null));
+		        builder.create();
+				builder.show();
+			
 			}
 			
 		});

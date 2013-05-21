@@ -8,12 +8,15 @@ import model.Combination;
 import model.Gate;
 import model.UserFunctions;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.graphics.Point;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -26,6 +29,8 @@ public class OmzettenActivity extends Activity
 	private ImageButton imageButtonGoBack;
 	//  ImageButton imageButtonNext
 	private ImageButton imageButtonNextGame;
+	//  ImageButton imageButtonHints
+	private Button buttonHints;
 	//  List Number numbers
 	private List<Gate> gates;
 	//  int gateID
@@ -65,6 +70,8 @@ public class OmzettenActivity extends Activity
         this.imageButtonNextGame = (ImageButton) findViewById( R.id.imageButtonNextGame );
         //  set textViewHighScore
         this.textViewHighScore = (TextView) findViewById( R.id.textViewHighScoreOmzetten );
+        //  set ImageButtonHints
+        this.buttonHints = (Button) findViewById( R.id.buttonHints ); 
         
         //  get Extra's
         Bundle bundle = getIntent().getExtras();
@@ -186,6 +193,20 @@ public class OmzettenActivity extends Activity
 				}
 				//  finish the activity
 				finish();
+			}
+			
+		});
+		
+		buttonHints.setOnClickListener( new OnClickListener(){
+			
+			public void onClick( View arg0 )
+			{
+				AlertDialog.Builder builder = new AlertDialog.Builder(activity);
+			    LayoutInflater inflater = activity.getLayoutInflater();
+		        builder.setView(inflater.inflate(R.layout.hintslayout, null));
+		        builder.create();
+				builder.show();
+			
 			}
 			
 		});

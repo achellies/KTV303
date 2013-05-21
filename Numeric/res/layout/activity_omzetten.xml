@@ -42,6 +42,15 @@
             android:textColor="@color/Black"
             android:textSize="24sp" />
 
+        <Button
+            android:id="@+id/buttonHints"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/textViewHighScoreOmzetten"
+            android:layout_alignBottom="@+id/textViewHighScoreOmzetten"
+            android:layout_toLeftOf="@+id/textViewHighScoreOmzetten"
+            android:text="hints" />
+
     </RelativeLayout>
      
     <ImageButton
