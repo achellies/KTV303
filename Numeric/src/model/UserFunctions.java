@@ -114,7 +114,7 @@ public class UserFunctions {
 		List<NameValuePair> params = new ArrayList<NameValuePair>();
 		params.add( new BasicNameValuePair( "tag", addscore_tag) );
 		params.add( new BasicNameValuePair( "size", String.valueOf( size ) ) );
-		params.add( new BasicNameValuePair( "uid", db.getUserDetails().get("uid")) );
+		params.add( new BasicNameValuePair( "uid", String.valueOf( db.getUserDetails().get("uid") ) ) );
 		
 		//  getting JSON Object
 		JSONObject json = jsonParser.getJSONFromUrl( URL, params );

@@ -9,6 +9,7 @@ import model.Gate;
 import model.UserFunctions;
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Point;
 import android.graphics.Typeface;
@@ -178,21 +179,46 @@ public class OmzettenActivity extends Activity
 					reloadI.putExtra( "gameCount", gameCount );
 					reloadI.putIntegerArrayListExtra( "combiAlreadyAnswered", combiAlreadyAnswered );
 					startActivity( getIntent() );
+					finish();
 				} else {
-					//  add 7 points to score
-					/*if(userFunctions.isUserLoggedIn(getApplicationContext()))
-					{
-						new Thread(new Runnable() {
-				        	public void run() {
-				        		userFunctions.addScore( getApplicationContext(), 7 );
-				        	}
-						});
-					}*/
-					Intent i = new Intent( getApplicationContext(), MainActivity.class );
-					startActivity(i);
+					int points = 5;
+					if( userFunctions.isUserLoggedIn( getApplicationContext() ) )
+			        {
+						AlertDialog.Builder builder = new AlertDialog.Builder(OmzettenActivity.this);
+		                builder.setTitle("Goedzo!");
+		                builder.setMessage("Je hebt " + String.valueOf( points ) + " punten verdiend!")
+		                       .setCancelable(false)
+		                       .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+		                           public void onClick(DialogInterface dialog, int id) {
+		                        	   OmzettenActivity.this.runOnUiThread(new Runnable() {
+		                                   public void run() {
+		                                	   //  addscore
+		                                   }
+		                        	   });
+		                        	   Intent i = new Intent( getApplicationContext(), MainActivity.class );
+		                        	   startActivity(i);
+		                        	   finish();
+		                           }
+		                       });                     
+		                AlertDialog alert = builder.create();
+		                alert.show();
+			        } else {
+			        	//  user is not logged in
+			        	AlertDialog.Builder builder = new AlertDialog.Builder(OmzettenActivity.this);
+		                builder.setTitle("Whoops!");
+		                builder.setMessage("Je bent niet ingelogd.\nJe bent " + String.valueOf( points ) + " punten misgelopen, log snel in!")
+		                       .setCancelable(false)
+		                       .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+		                           public void onClick(DialogInterface dialog, int id) {
+		                        	   Intent i = new Intent( getApplicationContext(), MainActivity.class );
+		                        	   startActivity(i);
+		                        	   finish();
+		                           }
+		                       });                     
+		                AlertDialog alert = builder.create();
+		                alert.show();
+			        }
 				}
-				//  finish the activity
-				finish();
 			}
 			
 		});
