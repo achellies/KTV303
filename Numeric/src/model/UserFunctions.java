@@ -14,7 +14,7 @@ public class UserFunctions {
 	
 	private JSONParser jsonParser;
 	
-	private static String URL = "http://ktv303.ddict.nl/api/";
+	private static String URL = "https://ktv303.ddict.nl/api/";
 	
 	private static String login_tag = "login";
 	private static String register_tag = "register";

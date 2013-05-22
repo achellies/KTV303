@@ -3,6 +3,7 @@ package com.ktv303.numeric;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -99,14 +100,16 @@ public class HighscoreActivity extends Activity
         				String res = json.getString(KEY_SUCCESS); 
         				if( Integer.parseInt(res) == 1 )
         				{
-        					JSONObject highscore = new JSONObject( json.getJSONObject("highscore").toString() );
-        					
-        					for( int i = 0; i < highscore.length(); i++ )
+        					JSONArray highscoreArray = new JSONArray();
+        					Log.v( "highscore array: ", ( highscoreArray = json.getJSONArray("highscore") ).toString() );
+        					for( int i = 0; i < highscoreArray.length(); i++ )
         					{
         						wait = true;
-        						username = highscore.names().get(i).toString();
-        						score = highscore.get( highscore.names().get(i).toString() ).toString();
         						position = i;
+        						
+        						username = (String) highscoreArray.getJSONArray(i).get(0);
+        						score = (String) highscoreArray.getJSONArray(i).get(1);
+        						
         						runOnUiThread(new Runnable() {
         						    public void run() {
         						    	TableRow row = new TableRow( getApplicationContext() );
